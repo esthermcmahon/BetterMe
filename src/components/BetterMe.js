@@ -4,12 +4,12 @@ import {ApplicationViews} from "./ApplicationViews"
 //add navbar
 import {Login} from "./auth/Login"
 import {Register} from "./auth/Register"
+//add BetterMe.css
 
 export const BetterMe = () => (
     <>
         <Route render={()=> {
             if (localStorage.getItem("BetterMe__user")) {
-
             return (
                 <>
                 <Route render={props => <ApplicationViews {...props} />} />
