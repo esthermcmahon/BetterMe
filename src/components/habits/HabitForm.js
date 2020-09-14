@@ -21,7 +21,7 @@ export const HabitForm = (props) => {
 
     const createNewHabit = () => {
 
-        if (!habit.habitName) {
+        if (habit.habitName) {
             addHabit({
                 userId: localStorage.getItem("BetterMe__user"),
                 name: habit.habitName,

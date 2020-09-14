@@ -17,6 +17,7 @@ export const Login = props => {
 
     const handleLogin = (e) => {
         e.preventDefault()
+        // props.history.push("/main")
 
         existingUserCheck()
             .then(exists => {
@@ -28,6 +29,7 @@ export const Login = props => {
                 } else if (!exists) {
                     existDialog.current.showModal()
                 }
+                props.history.push("/main")
             })
     }
 

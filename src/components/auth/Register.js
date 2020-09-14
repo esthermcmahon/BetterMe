@@ -36,7 +36,7 @@ export const Register = (props) => {
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
                                 localStorage.setItem("BetterMe__user", createdUser.id)
-                                props.history.push("/")
+                                props.history.push("/main")
                             }
                         })
                 })
