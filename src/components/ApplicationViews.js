@@ -5,6 +5,7 @@ import { HabitProvider } from "./habits/HabitProvider"
 import { HabitForm } from "./habits/HabitForm"
 import { CreateNewHabitButton } from "./habits/NewHabitButton"
 import { Logout } from "./auth/Logout"
+import { HabitDetails } from "./habits/HabitDetails"
 
 
 export const ApplicationViews = () => {
@@ -18,6 +19,11 @@ export const ApplicationViews = () => {
                 return <Logout {...props} />
             }} />
 
+            <HabitProvider>
+                <Route path="/habits/:habitId(\d+)" render={
+                    props => <HabitDetails {...props} />
+                } />
+            </HabitProvider>
 
 
             <HabitProvider>
