@@ -30,7 +30,7 @@ export const HabitProvider = (props) => {
     }
 
     const getHabitById = (id) => {
-        return fetch(`http://localhost:8088/habits/${id}`)
+        return fetch(`http://localhost:8088/habits/${id}?_expand=color`)
             .then(res => res.json())
     }
 
