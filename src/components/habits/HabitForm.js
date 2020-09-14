@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from "react"
 import { HabitContext } from "./HabitProvider"
+import { ColorContext } from "../colors/ColorProvider"
 
 
 export const HabitForm = (props) => {
     const { habits, getHabits, addHabit, editHabit } = useContext(HabitContext)
+    const { colors, getColors } = useContext(ColorContext)
 
     //component state
     const [habit, setHabit] = useState({name:""})
@@ -27,6 +29,7 @@ export const HabitForm = (props) => {
 
     useEffect(() => {
         getHabits()
+        getColors()
     }, [])
 
     useEffect(() => {
@@ -35,7 +38,7 @@ export const HabitForm = (props) => {
 
 
     const createNewHabit = () => {
-        debugger
+        const colorId = parseInt(habit.colorId)
         if (habit.name === "") {
             
             window.alert("Please name your habit")
@@ -49,7 +52,8 @@ export const HabitForm = (props) => {
                 archive: false,
                 details: habit.details,
                 startDate: habit.startDate,
-                userId: parseInt(localStorage.getItem("BetterMe__user"))
+                userId: parseInt(localStorage.getItem("BetterMe__user")),
+                colorId: colorId
             })
                 .then(() => props.history.push("/main"))
         }
@@ -61,8 +65,8 @@ export const HabitForm = (props) => {
                 frequency: habit.frequency,
                 archive: false,
                 details: habit.details,
-                startDate: habit.startDate
-                //add colorId
+                startDate: habit.startDate,
+                colorId: colorId
 
             })
                 .then(() => props.history.push("/main"))
@@ -96,6 +100,22 @@ export const HabitForm = (props) => {
                 <div className="form-group">
                     <label htmlFor="startDate">Start date: </label>
                     <input type="date" name="startDate" id="startDate" required autoFocus className="form-control" defaultValue={habit.startDate} onChange={handleControlledInputChange} />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="colorId">Color: </label>
+                    <select name="colorId" className="form-control"
+                        value={habit.colorId}
+                        onChange={handleControlledInputChange}>
+
+                        <option value="0">Choose a color</option>
+                        {colors.map(color => (
+                            <option key={color.id} value={color.id}>
+                                {color.color}
+                            </option>
+                        ))}
+                    </select>
                 </div>
             </fieldset>
             <button type="submit"

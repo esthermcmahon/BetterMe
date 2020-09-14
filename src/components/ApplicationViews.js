@@ -6,6 +6,7 @@ import { HabitForm } from "./habits/HabitForm"
 import { CreateNewHabitButton } from "./habits/NewHabitButton"
 import { Logout } from "./auth/Logout"
 import { HabitDetails } from "./habits/HabitDetails"
+import { ColorProvider } from "./colors/ColorProvider"
 
 
 export const ApplicationViews = () => {
@@ -20,16 +21,19 @@ export const ApplicationViews = () => {
             }} />
 
             <HabitProvider>
+                <ColorProvider>
                 <Route path="/habits/:habitId(\d+)" render={
                     props => <HabitDetails {...props} />
                 } />
                 <Route path="/habits/edit/:habitId(\d+)" render={
                     props => <HabitForm {...props} />
                 } />
+                </ColorProvider>
             </HabitProvider>
 
 
             <HabitProvider>
+                <ColorProvider>
                 <Route path="/main" render={(props) => {
                     return <HabitList {...props} />
                 }} />
@@ -37,6 +41,7 @@ export const ApplicationViews = () => {
                 <Route exact path="/habits/create" render={(props) => {
                     return <HabitForm {...props} />
                 }} />
+                </ColorProvider>
             </HabitProvider>
         </>
     )

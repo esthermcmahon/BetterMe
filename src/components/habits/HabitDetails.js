@@ -5,7 +5,7 @@ import { HabitContext } from "./HabitProvider"
 export const HabitDetails = (props) => {
     const { deleteHabit, getHabitById } = useContext(HabitContext)
 
-    const [habit, setHabit] = useState({})
+    const [habit, setHabit] = useState({color:{}})
 
     useEffect(() => {
         const habitId = parseInt(props.match.params.habitId)
@@ -19,7 +19,7 @@ export const HabitDetails = (props) => {
             <div className="habitDate">Start Date: {habit.startDate}</div>
             <div className="habitFrequency">Frequency goal: {habit.frequency}</div>
             <div className="habitDetails">Details: {habit.details}</div>
-            <div className="habitColor">Color: </div>
+            <div className="habitColor">Color: {habit.color.color} </div>
 
             <button onClick={() => deleteHabit(habit.id).then(() => props.history.push("/main"))} >Delete</button>
 
