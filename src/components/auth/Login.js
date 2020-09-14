@@ -23,13 +23,13 @@ export const Login = props => {
             .then(exists => {
                 if (exists && exists.password === password.current.value) {
                     localStorage.setItem("BetterMe__user", exists.id)
-                    props.history.push("/")
+                    props.history.push("/main")
                 } else if (exists && exists.password !== password.current.value) {
                     passwordDialog.current.showModal()
                 } else if (!exists) {
                     existDialog.current.showModal()
                 }
-                props.history.push("/main")
+                
             })
     }
 

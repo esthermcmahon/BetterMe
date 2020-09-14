@@ -22,9 +22,21 @@ export const HabitProvider = (props) => {
             .then(getHabits)
     }
 
+    const deleteHabit = (habitId) => {
+        return fetch(`http://localhost:8088/habits/${habitId}`, {
+            method: "DELETE"
+        })
+        .then(getHabits)
+    }
+
+    const getHabitById = (id) => {
+        return fetch(`http://localhost:8088/habits/${id}`)
+            .then(res => res.json())
+    }
+
     return (
         <HabitContext.Provider value={{
-            habits, addHabit, getHabits
+            habits, addHabit, getHabits, getHabitById, deleteHabit
         }}>
             {props.children}
         </HabitContext.Provider>
