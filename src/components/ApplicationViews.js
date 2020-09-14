@@ -23,6 +23,9 @@ export const ApplicationViews = () => {
                 <Route path="/habits/:habitId(\d+)" render={
                     props => <HabitDetails {...props} />
                 } />
+                <Route path="/habits/edit/:habitId(\d+)" render={
+                    props => <HabitForm {...props} />
+                } />
             </HabitProvider>
 
 

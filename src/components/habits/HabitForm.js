@@ -3,14 +3,12 @@ import { HabitContext } from "./HabitProvider"
 
 
 export const HabitForm = (props) => {
-    const { habits, getHabits, addHabit } = useContext(HabitContext)
+    const { habits, getHabits, addHabit, editHabit } = useContext(HabitContext)
 
     //component state
-    const [habit, setHabit] = useState({})
+    const [habit, setHabit] = useState({name:""})
 
-    useEffect(() => {
-       getHabits()
-    }, [])
+    const editMode = props.match.params.hasOwnProperty("habitId")
 
     const handleControlledInputChange = (event) => {
         const newHabit = Object.assign({}, habit)          // Create copy
@@ -18,25 +16,58 @@ export const HabitForm = (props) => {
         setHabit(newHabit)                                 // Set copy as new state
     }
 
+    const getHabitInEditMode = () => {
+        if (editMode) {
+            const habitId = parseInt(props.match.params.habitId)
+            const selectedHabit = habits.find(habit => habit.id === habitId) || {}
+            console.log(selectedHabit)
+            setHabit(selectedHabit)
+        }
+    }
+
+    useEffect(() => {
+        getHabits()
+    }, [])
+
+    useEffect(() => {
+        getHabitInEditMode()
+    }, [habits])
+
 
     const createNewHabit = () => {
-
-        if (habit.habitName) {
-            addHabit({
-                userId: localStorage.getItem("BetterMe__user"),
-                name: habit.habitName,
-                frequency: habit.habitFrequency,
+        debugger
+        if (habit.name === "") {
+            
+            window.alert("Please name your habit")
+            return           
+        }
+        if (editMode) {
+            editHabit({
+                id: habit.id,
+                name: habit.name,
+                frequency: habit.frequency,
                 archive: false,
-                details: habit.habitDetails,
-                startDate: habit.habitDate
+                details: habit.details,
+                startDate: habit.startDate,
+                userId: parseInt(localStorage.getItem("BetterMe__user"))
+            })
+                .then(() => props.history.push("/main"))
+        }
+        else {
+
+            addHabit({
+                userId: parseInt(localStorage.getItem("BetterMe__user")),
+                name: habit.name,
+                frequency: habit.frequency,
+                archive: false,
+                details: habit.details,
+                startDate: habit.startDate
                 //add colorId
 
             })
-            .then(() => props.history.push("/main"))
-        } else {
-            window.alert("Please complete all fields")
-          
+                .then(() => props.history.push("/main"))
         }
+
     }
 
     return (
@@ -44,27 +75,27 @@ export const HabitForm = (props) => {
             <h2 className="habitForm__title">New Habit</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="habitName">Habit name: </label>
-                    <input type="text" name="habitName" id="habitName" required autoFocus className="form-control" placeholder="Habit name" defaultValue={habit.habitName} onChange={handleControlledInputChange}/>
+                    <label htmlFor="name">Habit name: </label>
+                    <input type="text" name="name" id="name" required autoFocus className="form-control" placeholder="Habit name" defaultValue={habit.name} onChange={handleControlledInputChange} />
 
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="habitFrequency">Frequency: </label>
-                    <input type="text" name="habitFrequency" id="habitFrequency" required autoFocus className="form-control" placeholder="Frequency" defaultValue={habit.habitFrequency} onChange={handleControlledInputChange}/>
+                    <label htmlFor="frequency">Frequency: </label>
+                    <input type="text" name="frequency" id="frequency" required autoFocus className="form-control" placeholder="Frequency" defaultValue={habit.frequency} onChange={handleControlledInputChange} />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="habitDetails">Details: </label>
-                    <input type="text" name="habitDetails" id="habitDetails" required autoFocus className="form-control" placeholder="Details" defaultValue={habit.habitDetails} onChange={handleControlledInputChange}/>
+                    <label htmlFor="details">Details: </label>
+                    <input type="text" name="details" id="details" required autoFocus className="form-control" placeholder="Details" defaultValue={habit.details} onChange={handleControlledInputChange} />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="habitDate">Start date: </label>
-                    <input type="date" name="habitDate" id="habitDate" required autoFocus className="form-control" onChange={handleControlledInputChange}/>
+                    <label htmlFor="startDate">Start date: </label>
+                    <input type="date" name="startDate" id="startDate" required autoFocus className="form-control" defaultValue={habit.startDate} onChange={handleControlledInputChange} />
                 </div>
             </fieldset>
             <button type="submit"
@@ -73,7 +104,7 @@ export const HabitForm = (props) => {
                     createNewHabit()
                 }}
                 className="btn btn-primary">
-                Save Habit
+                {editMode ? "Save Updates" : "Save Habit"}
             </button>
         </form>
     )

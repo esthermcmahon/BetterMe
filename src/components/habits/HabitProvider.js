@@ -34,9 +34,20 @@ export const HabitProvider = (props) => {
             .then(res => res.json())
     }
 
+    const editHabit = habit => {
+        return fetch(`http://localhost:8088/habits/${habit.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(habit)
+        })
+            .then(getHabits)
+    }
+
     return (
         <HabitContext.Provider value={{
-            habits, addHabit, getHabits, getHabitById, deleteHabit
+            habits, addHabit, getHabits, getHabitById, deleteHabit, editHabit
         }}>
             {props.children}
         </HabitContext.Provider>
