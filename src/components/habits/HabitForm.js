@@ -21,7 +21,7 @@ export const HabitForm = (props) => {
 
     const createNewHabit = () => {
 
-        if (habit.habitName !== "") {
+        if (!habit.habitName) {
             addHabit({
                 userId: localStorage.getItem("BetterMe__user"),
                 name: habit.habitName,
@@ -45,20 +45,20 @@ export const HabitForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="habitName">Habit name: </label>
-                    <input type="text" name="habitName" id="habitName" required autoFocus className="form-control" placeholder="Habit name" onChange={handleControlledInputChange}/>
+                    <input type="text" name="habitName" id="habitName" required autoFocus className="form-control" placeholder="Habit name" defaultValue={habit.habitName} onChange={handleControlledInputChange}/>
 
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="habitFrequency">Frequency: </label>
-                    <input type="text" name="habitFrequency" id="habitFrequency" required autoFocus className="form-control" placeholder="Frequency" onChange={handleControlledInputChange}/>
+                    <input type="text" name="habitFrequency" id="habitFrequency" required autoFocus className="form-control" placeholder="Frequency" defaultValue={habit.habitFrequency} onChange={handleControlledInputChange}/>
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="habitDetails">Details: </label>
-                    <input type="text" name="habitDetails" id="habitDetails" required autoFocus className="form-control" placeholder="Details" onChange={handleControlledInputChange}/>
+                    <input type="text" name="habitDetails" id="habitDetails" required autoFocus className="form-control" placeholder="Details" defaultValue={habit.habitDetails} onChange={handleControlledInputChange}/>
                 </div>
             </fieldset>
             <fieldset>
