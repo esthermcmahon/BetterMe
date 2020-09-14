@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react"
 import { HabitContext } from "./HabitProvider"
 import { Habit } from "./Habit"
 
-export const HabitList = () => {
+export const HabitList = (props) => {
     const { habits, getHabits } = useContext(HabitContext)
 
     useEffect(() => {
@@ -12,7 +12,7 @@ export const HabitList = () => {
     return (
         <div className="habits">
             {
-                habits.map(habit => <Habit key={habit.id} habit={habit} />)
+                habits.map(habit => <Habit key={habit.id} habit={habit} {...props} />)
 
             }
         </div>
