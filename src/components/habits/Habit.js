@@ -1,37 +1,34 @@
 import React, {useState, useContext, useEffect} from "react"
 import { Link } from "react-router-dom"
 import { HabitContext } from "./HabitProvider"
-import { ColorContext } from "../colors/ColorProvider"
+
 
 export const Habit = (props) => {
-    const { getHabits, habits } = useContext(HabitContext)
-    const { colors, getColors } = useContext(ColorContext)
+    const { getHabitById } = useContext(HabitContext)
 
-    const [habit, setHabit] = useState({})
-    const [color, setColor] = useState({})
+    const [habit, setHabit] = useState({color:{}})
 
+
+    // useEffect(() => {
+    //     const habit = getHabitById(parseInt(props.match.params.habitId))      
+    //     setHabit(habit)
+    //     console.log(habit)
+    // }, [])
 
     useEffect(() => {
-        getHabits()
-        getColors()
+        const habitId = parseInt(props.habit.id)
+        getHabitById(habitId)
+            .then(setHabit)
     }, [])
 
-    useEffect(() => {
-        const habit = habits.find(habit => habit.id === props.match.params.habitId) || {}
-        setHabit(habit)
-    }, [habits])
 
-    useEffect(() => {
-        const color = colors.find(color => color.id === habit.colorId) || {}
-        setColor(color)
-    }, [colors])
 
     return (
     <section className="habitCard">
         <h3 className="habitName"><Link to={`/habits/${habit.id}`}>
                 { habit.name }
             </Link></h3>
-        <div className="habitColor">Color: {color.color}</div>
+        <div className="habitColor">Color: {habit.color.color}</div>
     </section>
     )
 }
