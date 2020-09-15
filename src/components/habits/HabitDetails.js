@@ -7,8 +7,8 @@ export const HabitDetails = (props) => {
     const { deleteHabit, getHabitById } = useContext(HabitContext)
     const { addHabitRep } = useContext(HabitRepContext)
 
-    const [habit, setHabit] = useState({color:{}})
-   
+    const [habit, setHabit] = useState({ color: {} })
+
 
     useEffect(() => {
         const habitId = parseInt(props.match.params.habitId)
@@ -28,9 +28,12 @@ export const HabitDetails = (props) => {
                     habitId: habit.id,
                     dateTimeDone: Date.now()
                 })
-                .then(() => props.history.push("/main"))}}>Done!</button>
-
+                    .then(() => props.history.push("/main"))
+            }}>Done!</button>
             
+            <button onClick={() => {
+                props.history.push(`/habits/${habit.id}/addHabitReps`)             
+            }}>Add Previous Reps</button>
 
             <button onClick={() => deleteHabit(habit.id).then(() => props.history.push("/main"))} >Delete</button>
 
