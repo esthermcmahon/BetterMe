@@ -22,11 +22,16 @@ export const HabitRepProvider = (props) => {
             .then(getHabitReps)
     }
 
+    const getHabitRepById = (id) => {
+        return fetch(`http://localhost:8088/habitReps/${id}?_expand=habit`)
+            .then(res => res.json())
+    }
+
     
 
     return (
         <HabitRepContext.Provider value={{
-            habitReps, addHabitRep
+            habitReps, addHabitRep, getHabitReps, getHabitRepById
         }}>
             {props.children}
         </HabitRepContext.Provider>
