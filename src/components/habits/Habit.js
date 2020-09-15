@@ -31,6 +31,9 @@ export const Habit = (props) => {
                     dateTimeDone: Date.now()
                 })
                 .then(() => props.history.push("/main"))}}>Done!</button>
+         <button onClick={() => {
+                props.history.push(`/habits/${habit.id}/addHabitReps`)             
+            }}>Add Previous Reps</button>
     </section>
     )
 }

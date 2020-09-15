@@ -14,20 +14,22 @@ export const HabitRepForm = (props) => {
     const [habit, setHabit] = useState({name:""})
 
     const habitId = parseInt(props.match.params.habitId)
+
+    const handleControlledInputChange = (event) => {
+        const newHabitRep = Object.assign({}, habitRep)
+        newHabitRep[event.target.name] = event.target.value
+        setHabitRep(newHabitRep)
+    }
     
 
     useEffect(() => {
-
-        getHabits()
-            .then(console.log(habits))
+        getHabits()      
        
     }, [])
 
     useEffect(() => {
-        
         const relatedHabit = habits.find(habit => habit.id === habitId) || {}
-        
-        console.log(relatedHabit)
+
         setHabit(relatedHabit)
     }, [habits])
 
@@ -50,7 +52,7 @@ export const HabitRepForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="dateTimeDone">Date completed: </label>
-                    <input type="date" name="dateTimeDone" id="dateTimeDone" required autoFocus className="form-control" defaultValue={habitRep.dateTimeDone} />
+                    <input type="date" name="dateTimeDone" id="dateTimeDone" required autoFocus className="form-control" defaultValue={habitRep.dateTimeDone} onChange={handleControlledInputChange}/>
                 </div>
             </fieldset>
 
