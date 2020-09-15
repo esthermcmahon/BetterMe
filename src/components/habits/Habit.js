@@ -1,19 +1,15 @@
 import React, {useState, useContext, useEffect} from "react"
 import { Link } from "react-router-dom"
 import { HabitContext } from "./HabitProvider"
+import { HabitRepContext } from "../habitReps/HabitRepProvider"
 
 
 export const Habit = (props) => {
     const { getHabitById } = useContext(HabitContext)
+    const { addHabitRep } = useContext(HabitRepContext)
 
     const [habit, setHabit] = useState({color:{}})
 
-
-    // useEffect(() => {
-    //     const habit = getHabitById(parseInt(props.match.params.habitId))      
-    //     setHabit(habit)
-    //     console.log(habit)
-    // }, [])
 
     useEffect(() => {
         const habitId = parseInt(props.habit.id)
@@ -29,6 +25,12 @@ export const Habit = (props) => {
                 { habit.name }
             </Link></h3>
         <div className="habitColor">Color: {habit.color.color}</div>
+        <button onClick={() => {
+                addHabitRep({
+                    habitId: habit.id,
+                    dateTimeDone: Date.now()
+                })
+                .then(() => props.history.push("/main"))}}>Done!</button>
     </section>
     )
 }
