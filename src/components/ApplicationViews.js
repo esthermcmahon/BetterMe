@@ -9,6 +9,7 @@ import { HabitDetails } from "./habits/HabitDetails"
 import { ColorProvider } from "./colors/ColorProvider"
 import { HabitRepProvider } from "./habitReps/HabitRepProvider"
 import { HabitRepForm } from "./habitReps/HabitRepForm"
+import { HabitProgress } from "./habitReps/HabitProgress"
 
 
 export const ApplicationViews = () => {
@@ -24,29 +25,32 @@ export const ApplicationViews = () => {
 
             <HabitProvider>
                 <HabitRepProvider>
-                <ColorProvider>
-                <Route path="/habits/:habitId(\d+)" render={
-                    props => <HabitDetails {...props} />
-                } />
-                <Route path="/habits/edit/:habitId(\d+)" render={
-                    props => <HabitForm {...props} />
-                } />
-                </ColorProvider>
+                    <ColorProvider>
+                        <Route path="/habits/:habitId(\d+)" render={
+                            props => <HabitDetails {...props} />
+                        } />
+                        <Route path="/habits/edit/:habitId(\d+)" render={
+                            props => <HabitForm {...props} />
+                        } />
+                    </ColorProvider>
                 </HabitRepProvider>
             </HabitProvider>
 
 
             <HabitProvider>
                 <HabitRepProvider>
-                <ColorProvider>
-                <Route path="/main" render={(props) => {
-                    return <HabitList {...props} />
-                }} />
+                    <ColorProvider>
+                        <Route path="/main" render={(props) => {
+                            return <HabitProgress {...props} />
+                        }} />
+                        <Route path="/main" render={(props) => {
+                            return <HabitList {...props} />
+                        }} />
 
-                <Route exact path="/habits/create" render={(props) => {
-                    return <HabitForm {...props} />
-                }} />
-                </ColorProvider>
+                        <Route exact path="/habits/create" render={(props) => {
+                            return <HabitForm {...props} />
+                        }} />
+                    </ColorProvider>
                 </HabitRepProvider>
             </HabitProvider>
 
