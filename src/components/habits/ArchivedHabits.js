@@ -3,7 +3,7 @@ import { HabitContext } from "./HabitProvider"
 
 
 
-export const HabitList = (props) => {
+export const ArchivedHabits = (props) => {
     const { habits, getHabits } = useContext(HabitContext)
 
     const [habit, setHabit] = useState({ name: "" })
@@ -19,10 +19,10 @@ export const HabitList = (props) => {
         <>
 
             <section className="archivedHabits">
-                <h3>Saved For Later </h3>
+                <h3>Saved For Later</h3>
                 {isArchived ?
-                    <div>{habit.name}</div>}
+                    <div>{habit.name}</div> : ""}
             </section>
         </>
     )
-                }
+}
