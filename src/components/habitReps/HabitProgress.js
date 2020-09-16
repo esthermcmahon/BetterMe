@@ -1,6 +1,7 @@
 import React, {useState, useContext, useEffect} from "react"
-import { HabitContext } from "./HabitProvider"
-import { HabitRepContext } from "../habitReps/HabitRepProvider"
+import { HabitContext } from "../habits/HabitProvider"
+import { HabitRepContext } from "./HabitRepProvider"
+import { SingleHabitProgress } from "./SingleHabitProgress"
 
 export const HabitProgress = (props) => {
     const {habits, getHabits} = useContext(HabitContext)
@@ -10,49 +11,43 @@ export const HabitProgress = (props) => {
     const [habit, setHabit] = useState({})
     const [habitRep, setHabitRep] = useState({})
 
+    const [ relatedHabit, setRelatedHabit ] = useState({})
+    
+
     useEffect(() => {
         getHabits()
-        getHabitReps()
-
+    
     }, [])
 
-    useEffect(() => {
-
-        const repsForThisHabit = habitReps.map(habitRep => {
-
-
-            const relatedHabit = habits.find(habit => habit.id === habitRep.habitid)
-            setHabit(relatedHabit)
-    
-            const matchingHabitRepsArray = habitReps.filter(hr => hr.habitId === habit.id)
-    
-
-        })
-       
+    // // useEffect(() => {
+    //     const matchingHabit = habits.find(habit => habit.id === habitRep.habitId) || {}
+    //     setRelatedHabit(matchingHabit)
         
-        })
-    })
+    // // }, [habits])
+
+    useEffect(() => {
+       
+        const matchingHabit = habits.find(habit => habit.id === habitRep.habitId) || {} //returns habit
+        setRelatedHabit(matchingHabit)
+       
+        }, [habits])
 
     return (
+
         <section className="habitProgress">
-
+            {
+                habits.map(habit => <SingleHabitProgress key={habit.id} {...props} habit={habit} />)
+            } 
         </section>
-
     )
 }
+            
+        {/* </section>
+        <section className="habitProgress">
+            <h3>{habit.name}: {habitReps.length} </h3>
 
-/* for reference:
-const employeesHTMLList = arrayOfEmployees.map(employee => {
-                let relatedCustomers = customerRelationships.filter(cr => cr.employeeId === employee.id)
-                relatedCustomers = relatedCustomers.map(rc => {
-                    return customers.find(customer => customer.id === rc.customerId)
-                })
-                const relatedComputer = arrayOfComputers.find(computer => computer.id === employee.computerId)
-                const relatedDepartment = arrOfDepartments.find(department => department.id === employee.departmentId)
-                const relatedLocation = arrOfLocations.find(location => location.id === employee.locationId)
-                return EmployeeHTMLConverter(employee, relatedComputer, relatedDepartment, relatedLocation, relatedCustomers)
-            }).join("")
+        </section>
+       */}
 
-            contentTarget.innerHTML = employeesHTMLList
-        })
-}
+    
+
