@@ -4,7 +4,7 @@ import { HabitRepContext } from "../habitReps/HabitRepProvider"
 
 
 export const HabitDetails = (props) => {
-    const { deleteHabit, getHabitById } = useContext(HabitContext)
+    const { deleteHabit, getHabitById, archiveHabit } = useContext(HabitContext)
     const { addHabitRep } = useContext(HabitRepContext)
 
     const [habit, setHabit] = useState({ color: {} })
@@ -36,7 +36,7 @@ export const HabitDetails = (props) => {
             }}>Add Previous Reps</button>
 
             <button onClick={() => deleteHabit(habit.id).then(() => props.history.push("/main"))} >Delete</button>
-
+            <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} >Save for later</button>
             <button onClick={() => {
                 props.history.push(`/habits/edit/${habit.id}`)
             }}>Edit</button>

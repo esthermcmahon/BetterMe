@@ -36,7 +36,9 @@ export const HabitProgress = (props) => {
 
         <section className="habitProgress">
             {
-                habits.map(habit => <SingleHabitProgress key={habit.id} {...props} habit={habit} />)
+                habits.map(habit => {
+                    return habit.archive === false ? <SingleHabitProgress key={habit.id} {...props} habit={habit} /> : ""
+            })
             } 
         </section>
     )

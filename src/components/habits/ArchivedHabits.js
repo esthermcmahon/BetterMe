@@ -1,14 +1,12 @@
 import React, { useContext, useEffect, useState } from "react"
 import { HabitContext } from "./HabitProvider"
+import { SingleArchivedHabit } from "./ArchivedHabit"
 
 
 
 export const ArchivedHabits = (props) => {
-    const { habits, getHabits } = useContext(HabitContext)
+    const { habits, getHabits, restoreHabit } = useContext(HabitContext)
 
-    const [habit, setHabit] = useState({ name: "" })
-
-    const isArchived = habit.archive === true
 
     useEffect(() => {
         getHabits()
@@ -17,11 +15,16 @@ export const ArchivedHabits = (props) => {
 
     return (
         <>
-
             <section className="archivedHabits">
                 <h3>Saved For Later</h3>
-                {isArchived ?
-                    <div>{habit.name}</div> : ""}
+
+                {
+                    habits.map(habit => {
+                        return habit.archive === true ? <SingleArchivedHabit key={habit.id} habit={habit} {...props} /> : ""
+                        
+                    })
+                }
+
             </section>
         </>
     )
