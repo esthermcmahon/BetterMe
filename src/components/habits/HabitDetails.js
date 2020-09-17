@@ -40,6 +40,9 @@ export const HabitDetails = (props) => {
             <button onClick={() => {
                 props.history.push(`/habits/edit/${habit.id}`)
             }}>Edit</button>
+            <button onClick={() => {
+                props.history.push(`/habits/${habit.id}/notes/create`)
+            }}>Add a note</button>
         </section>
     )
 }
