@@ -19,7 +19,7 @@ export const HabitDetails = (props) => {
     return (
         <section className="habit">
             <h3 className="habitName">{habit.name}</h3>
-            <div className="habitDate">Start Date: {habit.startDate}</div>
+            <div className="habitDate">Start Date: { new Date(habit.startDate).toLocaleDateString('en-US')}</div>
             <div className="habitFrequency">Frequency goal: {habit.frequency}</div>
             <div className="habitDetails">Details: {habit.details}</div>
             <div className="habitColor">Color: {habit.color.color} </div>
