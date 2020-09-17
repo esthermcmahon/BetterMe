@@ -45,9 +45,40 @@ export const HabitProvider = (props) => {
             .then(getHabits)
     }
 
+    const archiveHabit = (habitId) => {
+        const archivedHabit = {
+            archive: true
+        }
+        return fetch(`http://localhost:8088/habits/${habitId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+    
+            },
+            body: JSON.stringify(archivedHabit)
+        })
+            .then(getHabits)     
+    }
+
+    const restoreHabit = (habitId) => {
+        const restoredHabit = {
+            archive: false
+        }
+        return fetch(`http://localhost:8088/habits/${habitId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+    
+            },
+            body: JSON.stringify(restoredHabit)
+        })
+            .then(getHabits)     
+    }
+
+
     return (
         <HabitContext.Provider value={{
-            habits, addHabit, getHabits, getHabitById, deleteHabit, editHabit
+            habits, addHabit, getHabits, getHabitById, deleteHabit, editHabit, archiveHabit, restoreHabit
         }}>
             {props.children}
         </HabitContext.Provider>

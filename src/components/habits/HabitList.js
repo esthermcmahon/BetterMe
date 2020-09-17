@@ -14,9 +14,13 @@ export const HabitList = (props) => {
     return (
         <div className="habits">
             {
-                habits.map(habit => <Habit key={habit.id} habit={habit} {...props} />)
+                habits.map(habit => {
+                
+                    return habit.archive === false ? <Habit key={habit.id} habit={habit} {...props} /> : ""
+                })
 
             }
         </div>
     )
 }
+

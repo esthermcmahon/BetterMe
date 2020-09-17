@@ -10,6 +10,7 @@ import { ColorProvider } from "./colors/ColorProvider"
 import { HabitRepProvider } from "./habitReps/HabitRepProvider"
 import { HabitRepForm } from "./habitReps/HabitRepForm"
 import { HabitProgress } from "./habitReps/HabitProgress"
+import { ArchivedHabits } from "./habits/ArchivedHabits"
 
 
 export const ApplicationViews = () => {
@@ -60,6 +61,12 @@ export const ApplicationViews = () => {
                         return <HabitRepForm {...props} />
                     }} />
                 </HabitRepProvider>
+            </HabitProvider>
+
+            <HabitProvider>
+                <Route exact path="/habits/archivedHabits" render={(props) => {
+                    return <ArchivedHabits {...props} />
+                }} />
             </HabitProvider>
         </>
     )
