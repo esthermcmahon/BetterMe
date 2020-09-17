@@ -14,6 +14,7 @@ import { ArchivedHabits } from "./habits/ArchivedHabits"
 import { NoteProvider } from "./notes/NoteProvider"
 import { NoteForm } from "./notes/NoteForm"
 import { NoteList } from "./notes/NoteList"
+import { RepsList } from "./habitReps/RepsList"
 
 
 export const ApplicationViews = () => {
@@ -32,6 +33,9 @@ export const ApplicationViews = () => {
                     <ColorProvider>
                         <Route exact path="/habits/:habitId(\d+)" render={
                             props => <HabitDetails {...props} />
+                        } />
+                         <Route exact path="/habits/:habitId(\d+)" render={
+                            props => <RepsList {...props} />
                         } />
                         <Route path="/habits/edit/:habitId(\d+)" render={
                             props => <HabitForm {...props} />

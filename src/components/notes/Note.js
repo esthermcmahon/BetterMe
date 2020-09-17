@@ -9,7 +9,7 @@ export const Note = (props) => {
     return (
         <section className="note">
             <div>Note: {props.note.notes} </div>
-            <div>Date: {props.note.date} </div>
+            <div>Date: { new Date(props.note.date).toLocaleDateString('en-US')}</div>
             <button onClick={() => {
                 deleteNote(props.note.id)
             }}>Delete</button>
