@@ -16,11 +16,15 @@ import { NoteForm } from "./notes/NoteForm"
 import { NoteList } from "./notes/NoteList"
 import { RepsList } from "./habitReps/RepsList"
 import { Main } from "./MainButton"
+import { Header } from "./Header"
 
 
 export const ApplicationViews = () => {
     return (
         <>
+            <Route path="/" render={(props) => {
+                return <Header {...props} />
+            }} />
             <Route path="/main" render={(props) => {
                 return <CreateNewHabitButton {...props} />
             }} />
@@ -35,6 +39,8 @@ export const ApplicationViews = () => {
             <Route path="/notes" render={(props) => {
                 return <Main {...props} />
             }} />
+
+
 
             <HabitProvider>
                 <HabitRepProvider>
