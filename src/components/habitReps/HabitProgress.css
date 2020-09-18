@@ -1,0 +1,28 @@
+.singleHabitRep {
+   
+        height: 1rem;
+        width: 1rem;
+        margin: 0.2rem 0.2rem;
+        background-color: black;
+    
+}
+
+#redSalsa {
+    background-color: #F94144;
+}
+#orangeRed {
+    background-color: #F3722C;
+}
+#maizeCrayola {
+    background-color: #F9C74F;
+}
+#pistachio {
+    background-color: #90BE6D;
+}
+#yaleBlue {
+    background-color: #124E78;
+}
+#darkByzantium {
+    background-color: #69385C;
+}
+
