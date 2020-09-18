@@ -15,6 +15,7 @@ import { NoteProvider } from "./notes/NoteProvider"
 import { NoteForm } from "./notes/NoteForm"
 import { NoteList } from "./notes/NoteList"
 import { RepsList } from "./habitReps/RepsList"
+import { Main } from "./MainButton"
 
 
 export const ApplicationViews = () => {
@@ -28,13 +29,20 @@ export const ApplicationViews = () => {
                 return <Logout {...props} />
             }} />
 
+            <Route path="/habits" render={(props) => {
+                return <Main {...props} />
+            }} />
+            <Route path="/notes" render={(props) => {
+                return <Main {...props} />
+            }} />
+
             <HabitProvider>
                 <HabitRepProvider>
                     <ColorProvider>
                         <Route exact path="/habits/:habitId(\d+)" render={
                             props => <HabitDetails {...props} />
                         } />
-                         <Route exact path="/habits/:habitId(\d+)" render={
+                        <Route exact path="/habits/:habitId(\d+)" render={
                             props => <RepsList {...props} />
                         } />
                         <Route path="/habits/edit/:habitId(\d+)" render={
@@ -87,13 +95,13 @@ export const ApplicationViews = () => {
                     }} />
                 </NoteProvider>
             </HabitProvider>
-            
+
             <HabitProvider>
-            <NoteProvider>
-                <Route exact path="/habits/:habitId(\d+)" render={(props) => {
-                    return <NoteList {...props} />
-                }} />
-            </NoteProvider>
+                <NoteProvider>
+                    <Route exact path="/habits/:habitId(\d+)" render={(props) => {
+                        return <NoteList {...props} />
+                    }} />
+                </NoteProvider>
             </HabitProvider>
         </>
     )
