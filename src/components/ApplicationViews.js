@@ -17,6 +17,7 @@ import { NoteList } from "./notes/NoteList"
 import { RepsList } from "./habitReps/RepsList"
 import { Main } from "./MainButton"
 import { Header } from "./Header"
+import { SavedHabits } from "./habits/SavedHabits"
 
 
 export const ApplicationViews = () => {
@@ -27,6 +28,9 @@ export const ApplicationViews = () => {
             }} />
             <Route path="/main" render={(props) => {
                 return <CreateNewHabitButton {...props} />
+            }} />
+            <Route path="/main" render={(props) => {
+                return <SavedHabits {...props} />
             }} />
 
             <Route path="/main" render={(props) => {

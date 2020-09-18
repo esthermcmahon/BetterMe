@@ -12,6 +12,7 @@ export const ArchivedHabits = (props) => {
         getHabits()
     }, [])
 
+    const filteredHabits = habits.filter(habit => habit.userId === parseInt(localStorage.getItem("BetterMe__user"))) || {}
 
     return (
         <>
@@ -19,9 +20,9 @@ export const ArchivedHabits = (props) => {
                 <h3>Saved For Later</h3>
 
                 {
-                    habits.map(habit => {
+                    filteredHabits.map(habit => {
                         return habit.archive === true ? <SingleArchivedHabit key={habit.id} habit={habit} {...props} /> : ""
-                        
+
                     })
                 }
 
