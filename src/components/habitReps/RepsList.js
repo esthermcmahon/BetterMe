@@ -25,7 +25,7 @@ export const RepsList = (props) => {
     useEffect(() => {
         const matchingHabitReps = habitReps.filter(hr => hr.habitId === habitId) || []
         setRelatedHabitReps(matchingHabitReps)
-    }, [relatedHabitReps])
+    }, [habitReps])
     
 
     useEffect(() => {

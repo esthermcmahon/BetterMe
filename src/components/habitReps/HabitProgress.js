@@ -32,11 +32,17 @@ export const HabitProgress = (props) => {
        
         }, [habits])
 
+    
+       
+    const filteredHabits = habits.filter(habit => habit.userId === parseInt(localStorage.getItem("BetterMe__user"))) || {}
+  
+    
+        
     return (
 
         <section className="habitProgress">
             {
-                habits.map(habit => {
+                filteredHabits.map(habit => {
                     return habit.archive === false ? <SingleHabitProgress key={habit.id} {...props} habit={habit} /> : ""
             })
             } 
