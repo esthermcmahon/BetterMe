@@ -9,12 +9,14 @@ export const HabitList = (props) => {
     useEffect(() => {
         getHabits()
     }, [])
+
+    const filteredHabits = habits.filter(habit => habit.userId === parseInt(localStorage.getItem("BetterMe__user"))) || {}
     
 
     return (
         <div className="habits">
             {
-                habits.map(habit => {
+                filteredHabits.map(habit => {
                 
                     return habit.archive === false ? <Habit key={habit.id} habit={habit} {...props} /> : ""
                 })
