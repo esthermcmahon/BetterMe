@@ -47,5 +47,6 @@ export const NoteList = (props) => {
 
             }
         </div>
+
     )
 }

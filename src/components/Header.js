@@ -1,8 +1,12 @@
 import React from "react"
+import "./header.css"
+
 
 export const Header = () => {
    return (
-    <h1>BetterMe</h1>
+    <header className="siteHeaderContainer">
+    <h1 className="siteHeader">BetterMe</h1>
+    </header>  
    )
    
 }

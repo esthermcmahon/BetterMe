@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { HabitRepContext } from "./HabitRepProvider"
 import { HabitContext } from "../habits/HabitProvider"
-
+import "./RepsList.css"
 
 
 export const RepsList = (props) => {
@@ -36,7 +36,7 @@ export const RepsList = (props) => {
         }, [habits])
 
     return (
-        <div className="habitReps">
+        <div className="habitRepsList">
             <h3>Completed Reps</h3>
             {
                 relatedHabitReps.map(habitRep => {

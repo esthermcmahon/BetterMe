@@ -18,6 +18,9 @@ import { RepsList } from "./habitReps/RepsList"
 import { Main } from "./MainButton"
 import { Header } from "./Header"
 import { SavedHabits } from "./habits/SavedHabits"
+import "./nav.css"
+import "./habits/HabitDetails.css"
+
 
 
 export const ApplicationViews = () => {
@@ -45,22 +48,31 @@ export const ApplicationViews = () => {
             }} />
 
 
-
-            <HabitProvider>
-                <HabitRepProvider>
-                    <ColorProvider>
-                        <Route exact path="/habits/:habitId(\d+)" render={
-                            props => <HabitDetails {...props} />
-                        } />
-                        <Route exact path="/habits/:habitId(\d+)" render={
-                            props => <RepsList {...props} />
-                        } />
-                        <Route path="/habits/edit/:habitId(\d+)" render={
-                            props => <HabitForm {...props} />
-                        } />
-                    </ColorProvider>
-                </HabitRepProvider>
-            </HabitProvider>
+           
+                <HabitProvider className="notesRepsContainer">
+                    <HabitRepProvider>
+                        <ColorProvider>
+                            <NoteProvider>
+                                <Route exact path="/habits/:habitId(\d+)" render={
+                                    props => <HabitDetails {...props} />
+                                } />
+                                 <Route path="/habits/edit/:habitId(\d+)" render={
+                                    props => <HabitForm {...props} />
+                                } />
+                                 <section className="notesRepsContainer">
+                                <Route exact path="/habits/:habitId(\d+)" render={
+                                    props => <RepsList {...props} />
+                                } />
+                               
+                                <Route exact path="/habits/:habitId(\d+)" render={(props) => {
+                                    return <NoteList {...props} />
+                                }} />
+                                 </section>
+                            </NoteProvider>
+                        </ColorProvider>
+                    </HabitRepProvider>
+                </HabitProvider>
+           
 
 
             <HabitProvider>
@@ -106,13 +118,7 @@ export const ApplicationViews = () => {
                 </NoteProvider>
             </HabitProvider>
 
-            <HabitProvider>
-                <NoteProvider>
-                    <Route exact path="/habits/:habitId(\d+)" render={(props) => {
-                        return <NoteList {...props} />
-                    }} />
-                </NoteProvider>
-            </HabitProvider>
+         
         </>
     )
 }

@@ -3,7 +3,7 @@ import React from "react"
 
 export const Logout = (props) => {
     return (
-        <button onClick={() => props.history.push("/login")}>
+        <button className="nav logout" onClick={() => props.history.push("/login")}>
             Logout
         </button>
     )
