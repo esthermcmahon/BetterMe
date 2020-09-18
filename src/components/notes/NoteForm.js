@@ -15,7 +15,7 @@ export const NoteForm = (props) => {
     const editMode = props.match.params.hasOwnProperty("noteId")
 
     const habitId = parseInt(props.match.params.habitId)
-    console.log(habitId)
+   
 
     const handleControlledInputChange = (event) => {
         const newNote = Object.assign({}, note)

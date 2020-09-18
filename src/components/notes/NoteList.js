@@ -38,6 +38,7 @@ export const NoteList = (props) => {
 
     return (
         <div className="notes">
+            <h3>Notes</h3>
             {
                 relatedNotes.map(note => {
                 
