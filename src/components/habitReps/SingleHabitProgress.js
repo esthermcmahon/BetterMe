@@ -4,6 +4,7 @@ import { ColorContext } from "../colors/ColorProvider"
 
 
 
+
 export const SingleHabitProgress = ({ habit }) => {
     const { colors, getColors } = useContext(ColorContext)
     const { habitReps, getHabitReps } = useContext(HabitRepContext)
@@ -28,23 +29,31 @@ export const SingleHabitProgress = ({ habit }) => {
         setRelatedColor(matchingColor)
     }, [colors])
 
-    const showColors = (string, num) => {
-        if (num < 1) {
-            return ""
-        } else if (num === 1) {
-            return string
-        } else {
-            return string + showColors(string, num - 1)
-        }
+    // const showColors = (string, num) => {
+    //     if (num < 1) {
+    //         return ""
+    //     } else if (num === 1) {
+    //         return string
+    //     } else {
+    //         return string + showColors(string, num - 1)
+    //     }
+    // }
 
-    }
+    // const colorBox = 
+    
+    // const colorClass = relatedColor.color
+    
+
 
 
     return (
         <section className="singleHabitProgress">
-        <h3>{habit.name}: {filteredHabitReps.length}</h3>
+     
+      
             
-                <div> {showColors(relatedColor.color, filteredHabitReps.length)}</div>
+              {filteredHabitReps.map(hr => {
+                  return <div className="singleHabitRep" id={relatedColor.color}></div>
+              })}
             
         </section>
         
@@ -52,5 +61,15 @@ export const SingleHabitProgress = ({ habit }) => {
    
 }
 
-
-
+// /* if needed, create function outside of return where className=function and function returns "singleHabit Rep +" {relatedColor.color}
+// // return (
+// //     <section className="singleHabitProgress">
+// //     <h3>{habit.name}: {filteredHabitReps.length}</h3>
+// //     <div className="singleHabitRep"></div>
+        
+// //           {filteredHabitReps.map(hr => {
+// //               return <div className="singleHabitRep"></div>
+// //           })}
+        
+// //     </section>
+{/* <h3>{habit.name}: {filteredHabitReps.length}</h3> */}

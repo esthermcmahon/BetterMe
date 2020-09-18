@@ -2,6 +2,7 @@ import React, {useState, useContext, useEffect} from "react"
 import { HabitContext } from "../habits/HabitProvider"
 import { HabitRepContext } from "./HabitRepProvider"
 import { SingleHabitProgress } from "./SingleHabitProgress"
+import "./HabitProgress.css"
 
 export const HabitProgress = (props) => {
     const {habits, getHabits} = useContext(HabitContext)

@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { HabitContext } from "./HabitProvider"
 import { HabitRepContext } from "../habitReps/HabitRepProvider"
+import "./Habit.css"
 
 
 export const Habit = (props) => {
@@ -21,10 +22,10 @@ export const Habit = (props) => {
 
     return (
         <section className="habitCard">
-            <h3 className="habitName"><Link to={`/habits/${habit.id}`}>
+            <h3 className="habitName"><div className="habitColor" id={habit.color.color}></div><Link to={`/habits/${habit.id}`}>
                 {habit.name}
             </Link></h3>
-            <div className="habitColor">Color: {habit.color.color}</div>
+           
             <button onClick={() => {
                 addHabitRep({
                     habitId: habit.id,

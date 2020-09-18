@@ -22,7 +22,6 @@ export const HabitForm = (props) => {
         if (editMode) {
             const habitId = parseInt(props.match.params.habitId)
             const selectedHabit = habits.find(habit => habit.id === habitId) || {}
-            console.log(selectedHabit)
             setHabit(selectedHabit)
         }
     }

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { HabitContext } from "./HabitProvider"
 import { HabitRepContext } from "../habitReps/HabitRepProvider"
+import "./Habit.css"
 
 
 export const HabitDetails = (props) => {
@@ -19,10 +20,11 @@ export const HabitDetails = (props) => {
     return (
         <section className="habit">
             <h3 className="habitName">{habit.name}</h3>
+            <div className="habitColor" id={habit.color.color}></div>
             <div className="habitDate">Start Date: { new Date(habit.startDate).toLocaleDateString('en-US')}</div>
             <div className="habitFrequency">Frequency goal: {habit.frequency}</div>
             <div className="habitDetails">Details: {habit.details}</div>
-            <div className="habitColor">Color: {habit.color.color} </div>
+           
             <button onClick={() => {
                 addHabitRep({
                     habitId: habit.id,
