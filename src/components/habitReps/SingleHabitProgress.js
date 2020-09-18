@@ -48,7 +48,7 @@ export const SingleHabitProgress = ({ habit }) => {
 
     return (
         <section className="singleHabitProgress">
-        <h3>{habit.name}: {filteredHabitReps.length}</h3>
+     
       
             
               {filteredHabitReps.map(hr => {
@@ -72,3 +72,4 @@ export const SingleHabitProgress = ({ habit }) => {
 // //           })}
         
 // //     </section>
+{/* <h3>{habit.name}: {filteredHabitReps.length}</h3> */}

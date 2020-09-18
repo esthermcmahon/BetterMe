@@ -1,9 +1,22 @@
+.habitProgress {
+
+}
+
+.singleHabitProgress {
+
+        display: flex;
+        flex-wrap: wrap;
+       
+    
+
+}
+
 .singleHabitRep {
    
         height: 1rem;
         width: 1rem;
         margin: 0.2rem 0.2rem;
-        background-color: black;
+       
     
 }
 
