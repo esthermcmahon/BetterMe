@@ -12,6 +12,11 @@ button.habitDetailsButton {
     padding: 0.25rem;
 }
 
+.dialog {
+    max-height: 100rem !important;
+    background-color: #F9C74F !important;
+}
+
 #redSalsa {
 background-color: #F94144;
 }
