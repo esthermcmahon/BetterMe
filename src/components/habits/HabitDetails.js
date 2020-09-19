@@ -3,6 +3,9 @@ import { HabitContext } from "./HabitProvider"
 import { HabitRepContext } from "../habitReps/HabitRepProvider"
 import "./Habit.css"
 import "./HabitDetails.css"
+import { Dialog } from "@reach/dialog";
+import "@reach/dialog/styles.css";
+
 
 
 export const HabitDetails = (props) => {
@@ -18,31 +21,38 @@ export const HabitDetails = (props) => {
             .then(setHabit)
     }, [])
 
+    const [showDialog, setShowDialog] = React.useState(false);
+    const open = () => setShowDialog(true);
+    const close = () => setShowDialog(false);
+
     return (
         <section className="habitDetails">
             <h3 className="habitName">{habit.name}</h3>
             <div className="habitColor" id={habit.color.color}></div>
-            <div className="habitDate">Start Date: { new Date(habit.startDate).toLocaleDateString('en-US')}</div>
+            <div className="habitDate">Start Date: {new Date(habit.startDate).toLocaleDateString('en-US')}</div>
             <div className="habitFrequency">Frequency goal: {habit.frequency}</div>
             <div className="habitDetails">Details: {habit.details}</div>
-           
+
             <button className="habitDetailsButton" onClick={() => {
                 addHabitRep({
                     habitId: habit.id,
                     dateTimeDone: Date.now()
                 })
                     .then(() => props.history.push("/main"))
-            }}>Done!</button>
-            
-            <button onClick={() => {
-                props.history.push(`/habits/${habit.id}/addHabitReps`)             
-            }}>Add Previous Reps</button>
+            }}>+</button>
+            <button onClick={open} >... </button>
+            <Dialog className="dialog" isOpen={showDialog} onDismiss={close}>
+                <button className="close-button" onClick={close}>x</button>
+                <button onClick={() => {
+                    props.history.push(`/habits/${habit.id}/addHabitReps`)
+                }}>Add Previous Reps</button>
 
-            <button onClick={() => deleteHabit(habit.id).then(() => props.history.push("/main"))} >Delete</button>
-            <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} >Save for later</button>
-            <button onClick={() => {
-                props.history.push(`/habits/edit/${habit.id}`)
-            }}>Edit</button>
+                <button onClick={() => deleteHabit(habit.id).then(() => props.history.push("/main"))} >Delete</button>
+                <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} >Save for later</button>
+                <button onClick={() => {
+                    props.history.push(`/habits/edit/${habit.id}`)
+                }}>Edit</button>
+            </Dialog>
             <button onClick={() => {
                 props.history.push(`/habits/${habit.id}/notes/create`)
             }}>Add a note</button>

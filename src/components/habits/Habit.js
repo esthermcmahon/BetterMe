@@ -3,6 +3,8 @@ import { Link } from "react-router-dom"
 import { HabitContext } from "./HabitProvider"
 import { HabitRepContext } from "../habitReps/HabitRepProvider"
 import "./Habit.css"
+import { Dialog } from "@reach/dialog";
+import "@reach/dialog/styles.css";
 
 
 export const Habit = (props) => {
@@ -18,6 +20,10 @@ export const Habit = (props) => {
             .then(setHabit)
     }, [])
 
+    const [showDialog, setShowDialog] = React.useState(false);
+    const open = () => setShowDialog(true);
+    const close = () => setShowDialog(false);
+
 
 
     return (
@@ -25,18 +31,24 @@ export const Habit = (props) => {
             <h3 className="habitName"><div className="habitColor" id={habit.color.color}></div><Link to={`/habits/${habit.id}`}>
                 {habit.name}
             </Link></h3>
-           
+
+
             <button onClick={() => {
                 addHabitRep({
                     habitId: habit.id,
                     dateTimeDone: Date.now()
                 })
                     .then(() => props.history.push("/main"))
-            }}>Done!</button>
-            <button onClick={() => {
-                props.history.push(`/habits/${habit.id}/addHabitReps`)
-            }}>Add Previous Reps</button>
-            <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} >Save for later</button>
+            }}>+</button>
+            <button onClick={open} >... </button>
+            <Dialog className="dialog" isOpen={showDialog} onDismiss={close}>
+                <button className="close-button" onClick={close}>x</button>
+                <button onClick={() => {
+                    props.history.push(`/habits/${habit.id}/addHabitReps`)
+                }}>Add Previous Reps</button>
+                <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} >Save for later</button>
+            </Dialog>
+
         </section>
     )
 }

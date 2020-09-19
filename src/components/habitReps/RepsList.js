@@ -10,12 +10,12 @@ export const RepsList = (props) => {
 
     const { habits, getHabits } = useContext(HabitContext)
     const { habitReps, getHabitReps } = useContext(HabitRepContext)
-   
-    const [ relatedHabitReps, setRelatedHabitReps ] = useState([])
+
+    const [relatedHabitReps, setRelatedHabitReps] = useState([])
     const [habit, setHabit] = useState({})
-   
-  
-    
+
+
+
     useEffect(() => {
         getHabitReps()
         getHabits()
@@ -26,27 +26,34 @@ export const RepsList = (props) => {
         const matchingHabitReps = habitReps.filter(hr => hr.habitId === habitId) || []
         setRelatedHabitReps(matchingHabitReps)
     }, [habitReps])
-    
+
 
     useEffect(() => {
-       
+
         const matchingHabit = habits.find(habit => habit.id === habitId) || {} //returns habit
         setHabit(matchingHabit)
-       
-        }, [habits])
+
+    }, [habits])
 
     return (
-        <div className="habitRepsList">
-            <h3>Completed Reps</h3>
-            {
-                relatedHabitReps.map(habitRep => {
-                
-                    return <p>{ new Date(habitRep.dateTimeDone).toLocaleDateString('en-US')}</p> 
-                })
+        <>
+            <div className="habitRepsList">
+                <h3>Completed Reps</h3>
+                {
+                    relatedHabitReps.map(habitRep => {
 
-            }
-        </div>
+                        return <>
+                            <p>{new Date(habitRep.dateTimeDone).toLocaleDateString('en-US')}</p>
+                            </>
+                        
+                    })
+
+                }
+            </div>
+        </>
     )
 }
 
+// deleteHabitRep
+// <button onClick={() => deleteHabitRep(habitRep.id)}>x</button>
 // key={habit.id} habit={habit} note={note} {...props}
