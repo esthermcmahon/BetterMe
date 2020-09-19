@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { HabitContext } from "./HabitProvider"
 import { SingleArchivedHabit } from "./ArchivedHabit"
+import "./ArchivedHabits.css"
 
 
 

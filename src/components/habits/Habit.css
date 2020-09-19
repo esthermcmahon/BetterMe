@@ -14,7 +14,8 @@ button.habitDetailsButton {
 
 .dialog {
     max-height: 100rem !important;
-    background-color: white !important;
+    max-width: 50rem !important;
+    background-color: #edf7fb !important;
     border-radius: 5% !important;
 }
 

@@ -19,7 +19,7 @@ a {
 
 header {
   margin: 0rem;
-  padding: 1rem;
+  padding: 1rem 1rem 2rem 1rem;
   background-color: white;
   height: 5rem;
   color: #247ba0;
@@ -30,5 +30,7 @@ button {
   color: #e0fbfc;
   border: none !important;
   margin: .25rem !important;
+  padding: .25rem !important;
   border-radius: 10% !important;
+  font-weight: bold;
 }

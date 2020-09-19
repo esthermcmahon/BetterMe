@@ -9,19 +9,25 @@ section.notesRepsContainer {
 }
 
 .habitRepsList {
-    max-height: 300px;
+    max-height: 20rem;
+    max-width: 10rem;
     overflow: scroll;
     flex-basis: 50%;
     margin: .25rem;
     padding: .25rem;
+    background-color: #DAEEF7;
+    border: solid .05rem #0f3444;
 }
 
 .notes {
-    max-height: 300px;
+    max-height: 20rem;
+    max-width: 10rem;
     overflow: scroll;
     flex-basis: 50%;
     margin: .25rem;
     padding: .25rem;
+    background-color: #DAEEF7;
+    border: solid .05rem #0f3444;
 }
 
 
