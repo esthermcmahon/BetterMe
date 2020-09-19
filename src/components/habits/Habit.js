@@ -27,8 +27,8 @@ export const Habit = (props) => {
 
 
     return (
-        <section className="habitCard">
-            <h3 className="habitName"><div className="habitColor" id={habit.color.color}></div><Link to={`/habits/${habit.id}`}>
+        <section className="habitCard" id={habit.color.color}>
+            <h3 className="habitName" ><div className="habitColor" id={habit.color.color}></div><Link to={`/habits/${habit.id}`}>
                 {habit.name}
             </Link></h3>
 
