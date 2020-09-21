@@ -14,8 +14,27 @@ button.habitDetailsButton {
 
 .dialog {
     max-height: 100rem !important;
-    background-color: #F9C74F !important;
+    max-width: 50rem !important;
+    background-color: #edf7fb !important;
+    border-radius: 5% !important;
 }
+
+.habitCard {
+        flex-basis: 28%;
+        margin: .5rem;
+        padding: .5rem;
+        /* border: 1px solid black; */
+        border-radius: 3%;
+
+}
+
+.habits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+ 
 
 #redSalsa {
 background-color: #F94144;
