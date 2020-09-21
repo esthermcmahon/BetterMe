@@ -3,14 +3,16 @@ import { HabitContext } from "./HabitProvider"
 import { HabitRepContext } from "../habitReps/HabitRepProvider"
 import "./Habit.css"
 import "./HabitDetails.css"
-import { Dialog } from "@reach/dialog";
-import "@reach/dialog/styles.css";
 import EditIcon from "@material-ui/icons/Edit"
 import DeleteIcon from "@material-ui/icons/Delete"
 import AddBoxIcon from "@material-ui/icons/AddBox"
 import NoteAddIcon from "@material-ui/icons/NoteAdd"
 import DoneIcon from "@material-ui/icons/Done"
 import ArchiveIcon from "@material-ui/icons/Archive"
+import { Modal } from "reactstrap"
+import { HabitRepForm } from "../habitReps/HabitRepForm"
+import CancelPresentationIcon from "@material-ui/icons/CancelPresentation"
+import { NoteForm } from "../notes/NoteForm"
 
 
 
@@ -21,15 +23,23 @@ export const HabitDetails = (props) => {
     const [habit, setHabit] = useState({ color: {} })
 
 
+    const [HRModal, setHRModal] = useState(false);
+
+    const HRtoggle = () => setHRModal(!HRModal);
+
+    const [noteModal, setNoteModal] = useState(false);
+
+    const noteToggle = () => setNoteModal(!noteModal);
+
+
     useEffect(() => {
         const habitId = parseInt(props.match.params.habitId)
         getHabitById(habitId)
             .then(setHabit)
     }, [])
 
-    const [showDialog, setShowDialog] = React.useState(false);
-    const open = () => setShowDialog(true);
-    const close = () => setShowDialog(false);
+
+
 
     return (
         <section className="habitDetails" id={habit.color.color}>
@@ -48,8 +58,12 @@ export const HabitDetails = (props) => {
                 }}><DoneIcon className="materialUIButton" /></button>
                 <button onClick={() => {
                     props.history.push(`/habits/${habit.id}/addHabitReps`)
-                }} title="Add Previous Reps"><AddBoxIcon className="materialUIButton" /></button>
-
+                }} title="Add Previous Reps" onClick={HRtoggle} className="addRepsButton"><AddBoxIcon className="materialUIButton " />
+                    <Modal isOpen={HRModal} className="modal">
+                        <HabitRepForm {...props} />
+                        <button className="close-button" onClick={HRtoggle} title="close"><CancelPresentationIcon className="materialUIButton"/></button>
+                    </Modal>
+                </button>
                 <button onClick={() => deleteHabit(habit.id).then(() => props.history.push("/main"))}><DeleteIcon className="materialUIButton" /></button>
                 <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} title="Save For Later"><ArchiveIcon className="materialUIButton" /></button>
                 <button onClick={() => {
@@ -57,8 +71,14 @@ export const HabitDetails = (props) => {
                 }}><EditIcon className="materialUIButton" /></button>
                 <button onClick={() => {
                     props.history.push(`/habits/${habit.id}/notes/create`)
-                }} title="Add a Note"><NoteAddIcon className="materialUIButton" /></button>
+                }} title="Add a Note" onClick={noteToggle}><NoteAddIcon className="materialUIButton" />
+                <Modal isOpen={noteModal} className="modal">
+                        <NoteForm {...props} />
+                        <button className="close-button" onClick={noteToggle} title="close"><CancelPresentationIcon className="materialUIButton"/></button>
+                    </Modal>
+                </button>
             </div>
         </section>
     )
 }
+

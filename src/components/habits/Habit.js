@@ -8,6 +8,9 @@ import "@reach/dialog/styles.css";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz"
 import DoneIcon from "@material-ui/icons/Done"
 import CancelPresentationIcon from '@material-ui/icons/CancelPresentation';
+// import { Modal } from "reactstrap"
+// import { HabitRepForm } from "../habitReps/HabitRepForm"
+
 
 
 export const Habit = (props) => {
@@ -26,6 +29,12 @@ export const Habit = (props) => {
     const [showDialog, setShowDialog] = React.useState(false);
     const open = () => setShowDialog(true);
     const close = () => setShowDialog(false);
+
+    // const [HRModal, setHRModal] = useState(false);
+
+    // const HRtoggle = () => setHRModal(!HRModal);
+
+  
 
 
 
@@ -48,10 +57,19 @@ export const Habit = (props) => {
                 <button className="close-button" onClick={close} title="close"><CancelPresentationIcon className="materialUIButton"/></button>
                 <button onClick={() => {
                     props.history.push(`/habits/${habit.id}/addHabitReps`)
-                }}>Add Previous Reps</button>
+                }} title="Add Previous Reps" className="addRepsButton">Add Previous Reps
+                
+                </button>
                 <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} >Save for later</button>
             </Dialog>
 
         </section>
     )
 }
+
+{/* 
+    onClick={HRtoggle}
+    <Modal isOpen={HRModal} className="modal">
+<HabitRepForm {...props} />
+<button className="close-button" onClick={HRtoggle} title="close"><CancelPresentationIcon className="materialUIButton"/></button>
+</Modal> */}
