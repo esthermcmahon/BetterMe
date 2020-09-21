@@ -3,7 +3,6 @@
     height: 1rem;
     width: 1rem;
     margin: 0.2rem;
-    background-color: black;
 
 }
 
@@ -20,7 +19,7 @@ button.habitDetailsButton {
 }
 
 .habitCard {
-        flex-basis: 28%;
+        flex-basis: 20%;
         margin: .5rem;
         padding: .5rem;
         /* border: 1px solid black; */
@@ -32,6 +31,13 @@ button.habitDetailsButton {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+
+  .habitName {
+      background-color: white;
+      padding: 0.0125rem;
+      margin: 0.0125rem;
+      border-radius: 15%;
   }
 
  

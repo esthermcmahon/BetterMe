@@ -5,6 +5,12 @@ import "./Habit.css"
 import "./HabitDetails.css"
 import { Dialog } from "@reach/dialog";
 import "@reach/dialog/styles.css";
+import EditIcon from "@material-ui/icons/Edit"
+import DeleteIcon from "@material-ui/icons/Delete"
+import AddBoxIcon from "@material-ui/icons/AddBox"
+import NoteAddIcon from "@material-ui/icons/NoteAdd"
+import DoneIcon from "@material-ui/icons/Done"
+import ArchiveIcon from "@material-ui/icons/Archive"
 
 
 
@@ -38,23 +44,19 @@ export const HabitDetails = (props) => {
                     dateTimeDone: Date.now()
                 })
                     .then(() => props.history.push("/main"))
-            }}>+</button>
-            <button onClick={open} >... </button>
-            <Dialog className="dialog" isOpen={showDialog} onDismiss={close}>
-                <button className="close-button" onClick={close}>x</button>
-                <button onClick={() => {
-                    props.history.push(`/habits/${habit.id}/addHabitReps`)
-                }}>Add Previous Reps</button>
+            }}><DoneIcon className="materialUIButton"/></button>
+            <button onClick={() => {
+                props.history.push(`/habits/${habit.id}/addHabitReps`)
+            }} title="Add Previous Reps"><AddBoxIcon className="materialUIButton"/></button>
 
-                <button onClick={() => deleteHabit(habit.id).then(() => props.history.push("/main"))} >Delete</button>
-                <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} >Save for later</button>
-                <button onClick={() => {
-                    props.history.push(`/habits/edit/${habit.id}`)
-                }}>Edit</button>
-            </Dialog>
+            <button onClick={() => deleteHabit(habit.id).then(() => props.history.push("/main"))}><DeleteIcon className="materialUIButton"/></button>
+            <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} title="Save For Later"><ArchiveIcon className="materialUIButton"/></button>
+            <button onClick={() => {
+                props.history.push(`/habits/edit/${habit.id}`)
+            }}><EditIcon className="materialUIButton"/></button>
             <button onClick={() => {
                 props.history.push(`/habits/${habit.id}/notes/create`)
-            }}>Add a note</button>
+            }} title="Add a Note"><NoteAddIcon className="materialUIButton"/></button>
         </section>
     )
 }

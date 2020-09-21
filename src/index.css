@@ -33,4 +33,15 @@ button {
   padding: .25rem !important;
   border-radius: 10% !important;
   font-weight: bold;
+  height: 30px !important;
+  
+}
+
+.materialUIButton {
+  border-radius: 10% !important;
+}
+
+input {
+  border-radius: 5% !important;
+  border: solid .0125rem #123d4f !important;
 }

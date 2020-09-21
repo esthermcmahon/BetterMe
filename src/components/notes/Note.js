@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import { NoteContext } from "./NoteProvider"
+import EditIcon from "@material-ui/icons/Edit"
+import DeleteIcon from "@material-ui/icons/Delete"
 
 
 
@@ -12,10 +14,10 @@ export const Note = (props) => {
             <div>Date: { new Date(props.note.date).toLocaleDateString('en-US')}</div>
             <button onClick={() => {
                 deleteNote(props.note.id)
-            }}>Delete</button>
+            }} title="Delete"><DeleteIcon className="materialUIButton"/></button>
             <button onClick={() => {
                 props.history.push(`/notes/${props.note.id}/edit`)
-            }}>Edit</button>
+            }} title="Edit"><EditIcon className="materialUIButton"/></button>
 
 
         </section>

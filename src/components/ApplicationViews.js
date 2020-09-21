@@ -48,31 +48,31 @@ export const ApplicationViews = () => {
             }} />
 
 
-           
-                <HabitProvider className="notesRepsContainer">
-                    <HabitRepProvider>
-                        <ColorProvider>
-                            <NoteProvider>
-                                <Route exact path="/habits/:habitId(\d+)" render={
-                                    props => <HabitDetails {...props} />
-                                } />
-                                 <Route path="/habits/edit/:habitId(\d+)" render={
-                                    props => <HabitForm {...props} />
-                                } />
-                                 <section className="notesRepsContainer">
+
+            <HabitProvider className="notesRepsContainer">
+                <HabitRepProvider>
+                    <ColorProvider>
+                        <NoteProvider>
+                            <Route exact path="/habits/:habitId(\d+)" render={
+                                props => <HabitDetails {...props} />
+                            } />
+                            <Route path="/habits/edit/:habitId(\d+)" render={
+                                props => <HabitForm {...props} />
+                            } />
+                            <section className="notesRepsContainer">
                                 <Route exact path="/habits/:habitId(\d+)" render={
                                     props => <RepsList {...props} />
                                 } />
-                               
+
                                 <Route exact path="/habits/:habitId(\d+)" render={(props) => {
                                     return <NoteList {...props} />
                                 }} />
-                                 </section>
-                            </NoteProvider>
-                        </ColorProvider>
-                    </HabitRepProvider>
-                </HabitProvider>
-           
+                            </section>
+                        </NoteProvider>
+                    </ColorProvider>
+                </HabitRepProvider>
+            </HabitProvider>
+
 
 
             <HabitProvider>
@@ -118,7 +118,7 @@ export const ApplicationViews = () => {
                 </NoteProvider>
             </HabitProvider>
 
-         
+
         </>
     )
 }
