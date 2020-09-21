@@ -6,5 +6,17 @@
     }
 
 .singleArchivedHabit {
+    display: flex;
+    justify-content: space-around;
+    margin: 0.25rem;
+    padding: 0.25rem;
     
+}
+
+h3 h4{
+    color: #174e66 !important;
+} 
+
+h3 {
+    text-align: center;
 }

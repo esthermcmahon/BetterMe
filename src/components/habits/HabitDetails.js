@@ -33,30 +33,32 @@ export const HabitDetails = (props) => {
 
     return (
         <section className="habitDetails" id={habit.color.color}>
-            <h3 className="habitName">{habit.name}</h3>
-            <div className="habitDate">Start Date: {new Date(habit.startDate).toLocaleDateString('en-US')}</div>
-            <div className="habitFrequency">Frequency goal: {habit.frequency}</div>
-            <div className="habitDetails">Details: {habit.details}</div>
+            <div className="habitDetailsCard">
+                <h3 className="habitName">{habit.name}</h3>
+                <div className="habitDate">Start Date: {new Date(habit.startDate).toLocaleDateString('en-US')}</div>
+                <div className="habitFrequency">Frequency goal: {habit.frequency}</div>
+                <div className="habitDetails">Details: {habit.details}</div>
 
-            <button className="habitDetailsButton" onClick={() => {
-                addHabitRep({
-                    habitId: habit.id,
-                    dateTimeDone: Date.now()
-                })
-                    .then(() => props.history.push("/main"))
-            }}><DoneIcon className="materialUIButton"/></button>
-            <button onClick={() => {
-                props.history.push(`/habits/${habit.id}/addHabitReps`)
-            }} title="Add Previous Reps"><AddBoxIcon className="materialUIButton"/></button>
+                <button className="habitDetailsButton" onClick={() => {
+                    addHabitRep({
+                        habitId: habit.id,
+                        dateTimeDone: Date.now()
+                    })
+                        .then(() => props.history.push("/main"))
+                }}><DoneIcon className="materialUIButton" /></button>
+                <button onClick={() => {
+                    props.history.push(`/habits/${habit.id}/addHabitReps`)
+                }} title="Add Previous Reps"><AddBoxIcon className="materialUIButton" /></button>
 
-            <button onClick={() => deleteHabit(habit.id).then(() => props.history.push("/main"))}><DeleteIcon className="materialUIButton"/></button>
-            <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} title="Save For Later"><ArchiveIcon className="materialUIButton"/></button>
-            <button onClick={() => {
-                props.history.push(`/habits/edit/${habit.id}`)
-            }}><EditIcon className="materialUIButton"/></button>
-            <button onClick={() => {
-                props.history.push(`/habits/${habit.id}/notes/create`)
-            }} title="Add a Note"><NoteAddIcon className="materialUIButton"/></button>
+                <button onClick={() => deleteHabit(habit.id).then(() => props.history.push("/main"))}><DeleteIcon className="materialUIButton" /></button>
+                <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} title="Save For Later"><ArchiveIcon className="materialUIButton" /></button>
+                <button onClick={() => {
+                    props.history.push(`/habits/edit/${habit.id}`)
+                }}><EditIcon className="materialUIButton" /></button>
+                <button onClick={() => {
+                    props.history.push(`/habits/${habit.id}/notes/create`)
+                }} title="Add a Note"><NoteAddIcon className="materialUIButton" /></button>
+            </div>
         </section>
     )
 }
