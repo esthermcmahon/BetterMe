@@ -5,6 +5,9 @@ import { HabitRepContext } from "../habitReps/HabitRepProvider"
 import "./Habit.css"
 import { Dialog } from "@reach/dialog";
 import "@reach/dialog/styles.css";
+import MoreHorizIcon from "@material-ui/icons/MoreHoriz"
+import DoneIcon from "@material-ui/icons/Done"
+import CancelPresentationIcon from '@material-ui/icons/CancelPresentation';
 
 
 export const Habit = (props) => {
@@ -39,10 +42,10 @@ export const Habit = (props) => {
                     dateTimeDone: Date.now()
                 })
                     .then(() => props.history.push("/main"))
-            }}>+</button>
-            <button onClick={open} >... </button>
+            }}><DoneIcon /></button>
+            <button onClick={open} ><MoreHorizIcon /> </button>
             <Dialog className="dialog" isOpen={showDialog} onDismiss={close}>
-                <button className="close-button" onClick={close}>x</button>
+                <button className="close-button" onClick={close} title="close"><CancelPresentationIcon /></button>
                 <button onClick={() => {
                     props.history.push(`/habits/${habit.id}/addHabitReps`)
                 }}>Add Previous Reps</button>

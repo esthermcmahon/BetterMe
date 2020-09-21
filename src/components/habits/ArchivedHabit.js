@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
 import { HabitContext } from "./HabitProvider"
+import UnarchiveIcon from "@material-ui/icons/Unarchive"
 
 
 
@@ -10,7 +11,7 @@ export const SingleArchivedHabit = (props) => {
         <h3>{props.habit.name}</h3>
         <button onClick={() => {
         restoreHabit(props.habit.id).then(() => props.history.push("/main"))
-        }}>Add to Dashboard</button> 
+        }} title="Add to Dashboard"><UnarchiveIcon /></button> 
         
             
         </section>
