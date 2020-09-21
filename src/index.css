@@ -12,10 +12,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-a {
- text-decoration: none;
- color: black;
-}
+
 
 header {
   margin: 0rem;
@@ -32,8 +29,8 @@ button {
   margin: .25rem !important;
   padding: .25rem !important;
   border-radius: 10% !important;
-  font-weight: bold;
   height: 30px !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
   
 }
 

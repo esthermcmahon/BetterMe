@@ -23,7 +23,7 @@ button.habitDetailsButton {
         margin: .5rem;
         padding: .5rem;
         /* border: 1px solid black; */
-        border-radius: 3%;
+        border-radius: 5%;
 
 }
 
@@ -37,8 +37,16 @@ button.habitDetailsButton {
       background-color: white;
       padding: 0.0125rem;
       margin: 0.0125rem;
-      border-radius: 15%;
+      border-radius: 5%;
+      color: #123d4f !important;
+  
   }
+  a {
+    text-decoration: none;
+    color: #123d4f !important;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   }
 
  
 

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { HabitContext } from "./HabitProvider"
 import { ColorContext } from "../colors/ColorProvider"
+import "./HabitForm.css"
 
 
 export const HabitForm = (props) => {

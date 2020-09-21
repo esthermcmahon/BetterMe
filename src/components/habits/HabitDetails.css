@@ -1,6 +1,15 @@
 section.notesRepsContainer {
     display: flex;
+    justify-content: center;
+    margin: 0.5rem;
+    padding: 0.5rem;
 
+}
+
+.habitDetailsCard {
+    background-color: white;
+    margin: 1rem;
+    border-radius: 5%;
 }
 
 .habitDetails {
@@ -13,7 +22,7 @@ section.notesRepsContainer {
     max-width: 10rem;
     overflow: scroll;
     flex-basis: 50%;
-    margin: .25rem;
+    margin: .5rem;
     padding: .25rem;
     background-color: #DAEEF7;
     border: solid .05rem #0f3444;
@@ -24,11 +33,15 @@ section.notesRepsContainer {
     max-width: 10rem;
     overflow: scroll;
     flex-basis: 50%;
-    margin: .25rem;
+    margin: .5rem;
     padding: .25rem;
     background-color: #DAEEF7;
     border: solid .05rem #0f3444;
 }
 
+
+h3 {
+    color: #123d4f !important;
+  }
 
 

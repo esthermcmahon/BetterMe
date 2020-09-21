@@ -8,7 +8,7 @@ export const SingleArchivedHabit = (props) => {
     const { restoreHabit } = useContext(HabitContext)
     return (
         <section className="singleArchivedHabit">
-        <h3>{props.habit.name}</h3>
+        <h4>{props.habit.name}</h4>
         <button onClick={() => {
         restoreHabit(props.habit.id).then(() => props.history.push("/main"))
         }} title="Add to Dashboard"><UnarchiveIcon /></button> 
