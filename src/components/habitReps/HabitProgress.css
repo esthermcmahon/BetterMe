@@ -1,3 +1,5 @@
+@media (max-width: 767px) {
+
 .habitProgress {
 
 }
@@ -39,3 +41,4 @@
     background-color: #69385C;
 }
 
+}

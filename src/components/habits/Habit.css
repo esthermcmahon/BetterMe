@@ -1,3 +1,5 @@
+@media (max-width: 767px) {
+
 .habitColor {
    
     height: 1rem;
@@ -74,4 +76,5 @@ background-color: #124E78;
 }
 #darkByzantium {
 background-color: #69385C;
+}
 }

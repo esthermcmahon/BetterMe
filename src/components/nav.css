@@ -1,4 +1,8 @@
+@media (max-width: 767px) {
+
 button.nav {
     margin: .25rem;
     padding: .25rem;
+}
+
 }

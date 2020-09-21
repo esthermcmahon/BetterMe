@@ -1,7 +1,10 @@
+@media (max-width: 767px) {
+
 h2 {
     color: #174e66 !important;
 }
 
 div {
     color: #174e66 !important;
+}
 }
