@@ -14,10 +14,10 @@ export const Note = (props) => {
             <div>Date: { new Date(props.note.date).toLocaleDateString('en-US')}</div>
             <button onClick={() => {
                 deleteNote(props.note.id)
-            }} title="Delete"><DeleteIcon /></button>
+            }} title="Delete"><DeleteIcon className="materialUIButton"/></button>
             <button onClick={() => {
                 props.history.push(`/notes/${props.note.id}/edit`)
-            }} title="Edit"><EditIcon /></button>
+            }} title="Edit"><EditIcon className="materialUIButton"/></button>
 
 
         </section>

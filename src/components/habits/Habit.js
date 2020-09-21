@@ -31,9 +31,9 @@ export const Habit = (props) => {
 
     return (
         <section className="habitCard" id={habit.color.color}>
-            <h3 className="habitName" ><div className="habitColor" id={habit.color.color}></div><Link to={`/habits/${habit.id}`}>
+            <div className="habitName" ><Link to={`/habits/${habit.id}`}>
                 {habit.name}
-            </Link></h3>
+            </Link></div>
 
 
             <button onClick={() => {
@@ -42,10 +42,10 @@ export const Habit = (props) => {
                     dateTimeDone: Date.now()
                 })
                     .then(() => props.history.push("/main"))
-            }}><DoneIcon /></button>
-            <button onClick={open} ><MoreHorizIcon /> </button>
+            }}><DoneIcon className="materialUIButton"/></button>
+            <button onClick={open} ><MoreHorizIcon className="materialUIButton"/> </button>
             <Dialog className="dialog" isOpen={showDialog} onDismiss={close}>
-                <button className="close-button" onClick={close} title="close"><CancelPresentationIcon /></button>
+                <button className="close-button" onClick={close} title="close"><CancelPresentationIcon className="materialUIButton"/></button>
                 <button onClick={() => {
                     props.history.push(`/habits/${habit.id}/addHabitReps`)
                 }}>Add Previous Reps</button>

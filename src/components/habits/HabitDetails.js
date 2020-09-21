@@ -44,19 +44,19 @@ export const HabitDetails = (props) => {
                     dateTimeDone: Date.now()
                 })
                     .then(() => props.history.push("/main"))
-            }}><DoneIcon /></button>
+            }}><DoneIcon className="materialUIButton"/></button>
             <button onClick={() => {
                 props.history.push(`/habits/${habit.id}/addHabitReps`)
-            }} title="Add Previous Reps"><AddBoxIcon /></button>
+            }} title="Add Previous Reps"><AddBoxIcon className="materialUIButton"/></button>
 
-            <button onClick={() => deleteHabit(habit.id).then(() => props.history.push("/main"))}><DeleteIcon /></button>
-            <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} title="Save For Later"><ArchiveIcon /></button>
+            <button onClick={() => deleteHabit(habit.id).then(() => props.history.push("/main"))}><DeleteIcon className="materialUIButton"/></button>
+            <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} title="Save For Later"><ArchiveIcon className="materialUIButton"/></button>
             <button onClick={() => {
                 props.history.push(`/habits/edit/${habit.id}`)
-            }}><EditIcon /></button>
+            }}><EditIcon className="materialUIButton"/></button>
             <button onClick={() => {
                 props.history.push(`/habits/${habit.id}/notes/create`)
-            }} title="Add a Note"><NoteAddIcon /></button>
+            }} title="Add a Note"><NoteAddIcon className="materialUIButton"/></button>
         </section>
     )
 }
