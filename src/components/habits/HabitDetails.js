@@ -59,7 +59,7 @@ export const HabitDetails = (props) => {
                 <button onClick={() => {
                     props.history.push(`/habits/${habit.id}/addHabitReps`)
                 }} title="Add Previous Reps" onClick={HRtoggle} className="addRepsButton"><AddBoxIcon className="materialUIButton " />
-                    <Modal isOpen={HRModal}>
+                    <Modal isOpen={HRModal} className="modal">
                         <HabitRepForm {...props} />
                         <button className="close-button" onClick={HRtoggle} title="close"><CancelPresentationIcon className="materialUIButton"/></button>
                     </Modal>
@@ -72,7 +72,7 @@ export const HabitDetails = (props) => {
                 <button onClick={() => {
                     props.history.push(`/habits/${habit.id}/notes/create`)
                 }} title="Add a Note" onClick={noteToggle}><NoteAddIcon className="materialUIButton" />
-                <Modal isOpen={noteModal}>
+                <Modal isOpen={noteModal} className="modal">
                         <NoteForm {...props} />
                         <button className="close-button" onClick={noteToggle} title="close"><CancelPresentationIcon className="materialUIButton"/></button>
                     </Modal>

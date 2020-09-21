@@ -48,6 +48,13 @@ button.habitDetailsButton {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    }
 
+   .modal {
+       display: flex;
+       background-color: white !important;
+       justify-self: center !important;
+       max-width: 70% !important;
+   }
+
  
 
 #redSalsa {

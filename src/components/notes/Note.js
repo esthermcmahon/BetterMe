@@ -17,7 +17,9 @@ export const Note = (props) => {
             }} title="Delete"><DeleteIcon className="materialUIButton"/></button>
             <button onClick={() => {
                 props.history.push(`/notes/${props.note.id}/edit`)
-            }} title="Edit"><EditIcon className="materialUIButton"/></button>
+            }} title="Edit"><EditIcon className="materialUIButton"/>
+            
+            </button>
 
 
         </section>
@@ -25,3 +27,11 @@ export const Note = (props) => {
     )
 
 }
+{/* <button onClick={() => {
+    props.history.push(`/habits/${habit.id}/notes/create`)
+}} title="Add a Note" onClick={noteToggle}><NoteAddIcon className="materialUIButton" />
+<Modal isOpen={noteModal} className="modal">
+        <NoteForm {...props} />
+        <button className="close-button" onClick={noteToggle} title="close"><CancelPresentationIcon className="materialUIButton"/></button>
+    </Modal>
+</button> */}

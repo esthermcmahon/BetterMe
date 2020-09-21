@@ -44,8 +44,9 @@ h3 {
     color: #123d4f !important;
   }
 
-.addRepsButton {
-  
-
+  .modal {
+    display: flex;
+    background-color: white !important;
+    justify-self: center !important;
+    max-width: 70% !important;
 }
-

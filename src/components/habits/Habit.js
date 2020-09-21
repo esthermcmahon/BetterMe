@@ -8,8 +8,8 @@ import "@reach/dialog/styles.css";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz"
 import DoneIcon from "@material-ui/icons/Done"
 import CancelPresentationIcon from '@material-ui/icons/CancelPresentation';
-import { Modal } from "reactstrap"
-import { HabitRepForm } from "../habitReps/HabitRepForm"
+// import { Modal } from "reactstrap"
+// import { HabitRepForm } from "../habitReps/HabitRepForm"
 
 
 
@@ -30,9 +30,9 @@ export const Habit = (props) => {
     const open = () => setShowDialog(true);
     const close = () => setShowDialog(false);
 
-    const [HRModal, setHRModal] = useState(false);
+    // const [HRModal, setHRModal] = useState(false);
 
-    const HRtoggle = () => setHRModal(!HRModal);
+    // const HRtoggle = () => setHRModal(!HRModal);
 
   
 
@@ -57,11 +57,8 @@ export const Habit = (props) => {
                 <button className="close-button" onClick={close} title="close"><CancelPresentationIcon className="materialUIButton"/></button>
                 <button onClick={() => {
                     props.history.push(`/habits/${habit.id}/addHabitReps`)
-                }} title="Add Previous Reps" onClick={HRtoggle} className="addRepsButton">Add Previous Reps
-                    <Modal isOpen={HRModal}>
-                        <HabitRepForm {...props} />
-                        <button className="close-button" onClick={HRtoggle} title="close"><CancelPresentationIcon className="materialUIButton"/></button>
-                    </Modal>
+                }} title="Add Previous Reps" className="addRepsButton">Add Previous Reps
+                
                 </button>
                 <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} >Save for later</button>
             </Dialog>
@@ -69,3 +66,10 @@ export const Habit = (props) => {
         </section>
     )
 }
+
+{/* 
+    onClick={HRtoggle}
+    <Modal isOpen={HRModal} className="modal">
+<HabitRepForm {...props} />
+<button className="close-button" onClick={HRtoggle} title="close"><CancelPresentationIcon className="materialUIButton"/></button>
+</Modal> */}
