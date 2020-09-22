@@ -11,7 +11,13 @@ section.notesRepsContainer {
 .habitDetailsCard {
     background-color: white;
     margin: 1rem;
-    border-radius: 5%;
+    padding: 1rem;
+    border-radius: .4rem;
+}
+.dateFrequencyDetails {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem; 
 }
 
 .habitDetails {
@@ -67,7 +73,7 @@ h3 {
     .habitDetailsCard {
         background-color: white;
         margin: 1rem;
-        border-radius: 5%;
+        border-radius: 3px;
      
     }
     
