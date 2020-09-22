@@ -18,6 +18,8 @@ import { RepsList } from "./habitReps/RepsList"
 import { Main } from "./MainButton"
 import { Header } from "./Header"
 import { SavedHabits } from "./habits/SavedHabits"
+import { HabitRepModal } from "./habitReps/HabitRepModal"
+import { NoteModal } from "./notes/NoteModal"
 import "./nav.css"
 import "./habits/HabitDetails.css"
 
@@ -100,6 +102,14 @@ export const ApplicationViews = () => {
                 </HabitRepProvider>
             </HabitProvider>
 
+            <HabitProvider >
+                <HabitRepProvider>
+                    <Route exact path="/habits/:habitId(\d+)/addHabitReps" render={(props) => {
+                        return <HabitRepModal {...props} />
+                    }} />
+                </HabitRepProvider>
+            </HabitProvider>
+
             <HabitProvider>
                 <Route exact path="/habits/archivedHabits" render={(props) => {
                     return <ArchivedHabits {...props} />
@@ -115,6 +125,9 @@ export const ApplicationViews = () => {
                     <Route exact path="/notes/:noteId(\d+)/edit" render={(props) => {
                         return <NoteForm {...props} />
                     }} />
+                      {/* <Route exact path="/notes/:noteId(\d+)/edit" render={(props) => {
+                        return <NoteModal {...props} />
+                    }} /> */}
                 </NoteProvider>
             </HabitProvider>
 
