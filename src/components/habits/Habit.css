@@ -8,6 +8,18 @@
 
 }
 
+.habitCard--materialUIButton {
+    max-width: 20px;
+    max-height: 20px;
+    padding: .025rem;
+}
+
+.habitCard--buttons {
+    display: flex;
+    flex-direction: row;
+    
+}
+
 button.habitDetailsButton {
     margin: 0.25rem;
     padding: 0.25rem;
@@ -22,10 +34,9 @@ button.habitDetailsButton {
 
 .habitCard {
         flex-basis: 20%;
-        margin: .5rem;
-        padding: .5rem;
-        /* border: 1px solid black; */
-        border-radius: 5%;
+        margin: .25rem;
+        padding: .25rem;
+        border-radius: .25rem;
 
 }
 
@@ -33,6 +44,9 @@ button.habitDetailsButton {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 2rem 0rem 0rem 0rem;
+  
+   
   }
 
   .habitName {

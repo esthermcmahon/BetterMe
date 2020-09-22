@@ -3,13 +3,10 @@ import { Link } from "react-router-dom"
 import { HabitContext } from "./HabitProvider"
 import { HabitRepContext } from "../habitReps/HabitRepProvider"
 import "./Habit.css"
-import { Dialog } from "@reach/dialog";
-import "@reach/dialog/styles.css";
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz"
 import DoneIcon from "@material-ui/icons/Done"
-import CancelPresentationIcon from '@material-ui/icons/CancelPresentation';
-// import { Modal } from "reactstrap"
-// import { HabitRepForm } from "../habitReps/HabitRepForm"
+import AddBoxIcon from "@material-ui/icons/AddBox"
+import ArchiveIcon from "@material-ui/icons/Archive"
+
 
 
 
@@ -26,9 +23,9 @@ export const Habit = (props) => {
             .then(setHabit)
     }, [])
 
-    const [showDialog, setShowDialog] = React.useState(false);
-    const open = () => setShowDialog(true);
-    const close = () => setShowDialog(false);
+    // const [showDialog, setShowDialog] = React.useState(false);
+    // const open = () => setShowDialog(true);
+    // const close = () => setShowDialog(false);
 
     // const [HRModal, setHRModal] = useState(false);
 
@@ -44,24 +41,20 @@ export const Habit = (props) => {
                 {habit.name}
             </Link></div>
 
-
+            <div className="habitCard--buttons">
             <button onClick={() => {
                 addHabitRep({
                     habitId: habit.id,
                     dateTimeDone: Date.now()
                 })
                     .then(() => props.history.push("/main"))
-            }}><DoneIcon className="materialUIButton"/></button>
-            <button onClick={open} ><MoreHorizIcon className="materialUIButton"/> </button>
-            <Dialog className="dialog" isOpen={showDialog} onDismiss={close}>
-                <button className="close-button" onClick={close} title="close"><CancelPresentationIcon className="materialUIButton"/></button>
+            }}><DoneIcon className="habitCard--materialUIButton"/></button>
                 <button onClick={() => {
                     props.history.push(`/habits/${habit.id}/addHabitReps`)
-                }} title="Add Previous Reps" className="addRepsButton">Add Previous Reps
-                
+                }} title="Add Previous Reps" className="addRepsButton"><AddBoxIcon className="habitCard--materialUIButton" />
                 </button>
-                <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} >Save for later</button>
-            </Dialog>
+                <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} ><ArchiveIcon className="habitCard--materialUIButton" /></button>
+                </div>
 
         </section>
     )

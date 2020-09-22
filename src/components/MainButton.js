@@ -1,5 +1,6 @@
 import React from "react"
 import DashboardIcon from '@material-ui/icons/Dashboard';
+import "../index.css"
 
 
 export const Main = (props) => {

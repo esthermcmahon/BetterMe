@@ -45,10 +45,11 @@ export const HabitDetails = (props) => {
         <section className="habitDetails" id={habit.color.color}>
             <div className="habitDetailsCard">
                 <h3 className="habitName">{habit.name}</h3>
-                <div className="habitDate">Start Date: {new Date(habit.startDate).toLocaleDateString('en-US')}</div>
-                <div className="habitFrequency">Frequency goal: {habit.frequency}</div>
-                <div className="habitDetails">Details: {habit.details}</div>
-
+                <div className="dateFrequencyDetails">
+                    <div className="habitDate">Start Date: {new Date(habit.startDate).toLocaleDateString('en-US')}</div>
+                    <div className="habitFrequency">Frequency goal: {habit.frequency}</div>
+                    <div className="hDetails">Details: {habit.details}</div>
+                </div>
                 <button className="habitDetailsButton" onClick={() => {
                     addHabitRep({
                         habitId: habit.id,
@@ -61,7 +62,7 @@ export const HabitDetails = (props) => {
                 }} title="Add Previous Reps" onClick={HRtoggle} className="addRepsButton"><AddBoxIcon className="materialUIButton " />
                     <Modal isOpen={HRModal} className="modal">
                         <HabitRepForm {...props} />
-                        <button className="close-button" onClick={HRtoggle} title="close"><CancelPresentationIcon className="materialUIButton"/></button>
+                        <button className="close-button" onClick={HRtoggle} title="close"><CancelPresentationIcon className="materialUIButton" /></button>
                     </Modal>
                 </button>
                 <button onClick={() => deleteHabit(habit.id).then(() => props.history.push("/main"))}><DeleteIcon className="materialUIButton" /></button>
@@ -72,9 +73,9 @@ export const HabitDetails = (props) => {
                 <button onClick={() => {
                     props.history.push(`/habits/${habit.id}/notes/create`)
                 }} title="Add a Note" onClick={noteToggle}><NoteAddIcon className="materialUIButton" />
-                <Modal isOpen={noteModal} className="modal">
+                    <Modal isOpen={noteModal} className="modal">
                         <NoteForm {...props} />
-                        <button className="close-button" onClick={noteToggle} title="close"><CancelPresentationIcon className="materialUIButton"/></button>
+                        <button className="close-button" onClick={noteToggle} title="close"><CancelPresentationIcon className="materialUIButton" /></button>
                     </Modal>
                 </button>
             </div>
