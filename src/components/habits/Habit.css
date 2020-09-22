@@ -43,7 +43,7 @@ button.habitDetailsButton {
 .habits {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin: 2rem 0rem 0rem 0rem;
   
    
