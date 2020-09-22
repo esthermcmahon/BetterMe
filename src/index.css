@@ -1,5 +1,7 @@
+@media (max-width: 767px) {
+
 body {
-  margin: 0rem;
+  margin: 1rem;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -42,3 +44,52 @@ input {
   border-radius: 5% !important;
   border: solid .0125rem #123d4f !important;
 }
+}
+
+@media (min-width: 768px) {
+
+  body {
+    margin: 0rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: white;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+  
+  header {
+    margin: 0rem;
+    padding: 1rem 1rem 2rem 1rem;
+    background-color: white;
+    height: 5rem;
+    color: #247ba0;
+  }
+  
+  button {
+    background-color: #247ba0;
+    color: #e0fbfc;
+    border: none !important;
+    margin: .25rem !important;
+    padding: .25rem !important;
+    border-radius: 10% !important;
+    height: 30px !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    
+  }
+  
+  .materialUIButton {
+    border-radius: 10% !important;
+  }
+  
+  input {
+    border-radius: 5% !important;
+    border: solid .0125rem #123d4f !important;
+  }
+  }
