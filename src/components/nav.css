@@ -6,3 +6,12 @@ button.nav {
 }
 
 }
+
+@media (min-width: 768px) {
+
+    button.nav {
+        margin: .25rem;
+        padding: .25rem;
+    }
+    
+    }

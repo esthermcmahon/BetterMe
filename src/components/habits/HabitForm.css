@@ -8,3 +8,14 @@ div {
     color: #174e66 !important;
 }
 }
+
+@media (min-width: 768px) {
+
+    h2 {
+        color: #174e66 !important;
+    }
+    
+    div {
+        color: #174e66 !important;
+    }
+    }
