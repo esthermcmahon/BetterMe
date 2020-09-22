@@ -6,6 +6,9 @@ import "./Habit.css"
 import DoneIcon from "@material-ui/icons/Done"
 import AddBoxIcon from "@material-ui/icons/AddBox"
 import ArchiveIcon from "@material-ui/icons/Archive"
+// import { Modal } from "reactstrap"
+// import { HabitRepForm } from "../habitReps/HabitRepForm"
+// import CancelPresentationIcon from "@material-ui/icons/CancelPresentation"
 
 
 
@@ -16,20 +19,16 @@ export const Habit = (props) => {
 
     const [habit, setHabit] = useState({ color: {} })
 
+    // const [HRModal, setHRModal] = useState(false);
+
+    // const HRtoggle = () => setHRModal(!HRModal);
+
 
     useEffect(() => {
         const habitId = parseInt(props.habit.id)
         getHabitById(habitId)
             .then(setHabit)
     }, [])
-
-    // const [showDialog, setShowDialog] = React.useState(false);
-    // const open = () => setShowDialog(true);
-    // const close = () => setShowDialog(false);
-
-    // const [HRModal, setHRModal] = useState(false);
-
-    // const HRtoggle = () => setHRModal(!HRModal);
 
   
 
@@ -66,3 +65,12 @@ export const Habit = (props) => {
 <HabitRepForm {...props} />
 <button className="close-button" onClick={HRtoggle} title="close"><CancelPresentationIcon className="materialUIButton"/></button>
 </Modal> */}
+
+// <button onClick={() => {
+//     props.history.push(`/habits/${habit.id}/addHabitReps`)
+// }} title="Add Previous Reps" onClick={HRtoggle} className="addRepsButton"><AddBoxIcon className="materialUIButton " />
+//     <Modal isOpen={HRModal} className="modal">
+//         <HabitRepForm {...props} />
+//         <button className="close-button" onClick={HRtoggle} title="close"><CancelPresentationIcon className="materialUIButton" /></button>
+//     </Modal>
+// </button>
