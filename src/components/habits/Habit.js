@@ -6,9 +6,9 @@ import "./Habit.css"
 import DoneIcon from "@material-ui/icons/Done"
 import AddBoxIcon from "@material-ui/icons/AddBox"
 import ArchiveIcon from "@material-ui/icons/Archive"
-// import { Modal } from "reactstrap"
-// import { HabitRepForm } from "../habitReps/HabitRepForm"
-// import CancelPresentationIcon from "@material-ui/icons/CancelPresentation"
+import { Modal } from "reactstrap"
+import { HabitRepModal } from "../habitReps/HabitRepModal"
+import CancelPresentationIcon from "@material-ui/icons/CancelPresentation"
 
 
 
@@ -19,9 +19,9 @@ export const Habit = (props) => {
 
     const [habit, setHabit] = useState({ color: {} })
 
-    // const [HRModal, setHRModal] = useState(false);
+    const [HRModal, setHRModal] = useState(false);
 
-    // const HRtoggle = () => setHRModal(!HRModal);
+    const HRtoggle = () => setHRModal(!HRModal);
 
 
     useEffect(() => {
@@ -30,7 +30,7 @@ export const Habit = (props) => {
             .then(setHabit)
     }, [])
 
-  
+
 
 
 
@@ -41,19 +41,23 @@ export const Habit = (props) => {
             </Link></div>
 
             <div className="habitCard--buttons">
-            <button onClick={() => {
-                addHabitRep({
-                    habitId: habit.id,
-                    dateTimeDone: Date.now()
-                })
-                    .then(() => props.history.push("/main"))
-            }}><DoneIcon className="habitCard--materialUIButton"/></button>
+                <button onClick={() => {
+                    addHabitRep({
+                        habitId: habit.id,
+                        dateTimeDone: Date.now()
+                    })
+                        .then(() => props.history.push("/main"))
+                }}><DoneIcon className="habitCard--materialUIButton" /></button>
                 <button onClick={() => {
                     props.history.push(`/habits/${habit.id}/addHabitReps`)
-                }} title="Add Previous Reps" className="addRepsButton"><AddBoxIcon className="habitCard--materialUIButton" />
+                }} title="Add Previous Reps" className="addRepsButton" onClick={HRtoggle}><AddBoxIcon className="habitCard--materialUIButton" />
+                    <Modal isOpen={HRModal} className="modal">
+                        <HabitRepModal habitId={habit.id} {...props} />
+                        <button className="close-button" onClick={HRtoggle} title="close"><CancelPresentationIcon className="materialUIButton" /></button>
+                    </Modal>
                 </button>
                 <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} ><ArchiveIcon className="habitCard--materialUIButton" /></button>
-                </div>
+            </div>
 
         </section>
     )

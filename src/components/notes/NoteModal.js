@@ -3,7 +3,7 @@ import { NoteContext } from "./NoteProvider"
 import { HabitContext } from "../habits/HabitProvider"
 
 
-export const NoteForm = (props) => {
+export const NoteModal = (props) => {
     const { notes, getNotes, addNote, editNote } = useContext(NoteContext)
     const { habits, getHabits } = useContext(HabitContext)
 
@@ -82,7 +82,7 @@ export const NoteForm = (props) => {
 
     return (
         <form className="NoteForm">
-            <h2 className="NoteForm__title">{habit.name}</h2>
+            {/* <h2 className="NoteForm__title">{habit.name}</h2> */}
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="notes">Note: </label>

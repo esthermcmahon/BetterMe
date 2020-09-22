@@ -5,15 +5,13 @@ import { HabitContext } from "../habits/HabitProvider"
 
 
 
-export const HabitRepForm = (props) => {
+export const HabitRepModal = (props) => {
     const { addHabitRep } = useContext(HabitRepContext)
     const { habits, getHabits } = useContext(HabitContext)
 
     //component state
     const [habitRep, setHabitRep] = useState({})
     const [habit, setHabit] = useState({name:""})
-
-    const habitId = parseInt(props.match.params.habitId)
 
     const handleControlledInputChange = (event) => {
         const newHabitRep = Object.assign({}, habitRep)
@@ -28,7 +26,7 @@ export const HabitRepForm = (props) => {
     }, [])
 
     useEffect(() => {
-        const relatedHabit = habits.find(habit => habit.id === habitId) || {}
+        const relatedHabit = habits.find(habit => habit.id === props.habitId) || {}
 
         setHabit(relatedHabit)
     }, [habits])
@@ -37,7 +35,7 @@ export const HabitRepForm = (props) => {
     const enterPreviousHabitReps = () => {
 
             addHabitRep({
-                habitId: habit.id,
+                habitId: props.habitId,
                 dateTimeDone: habitRep.dateTimeDone
 
             })
@@ -60,7 +58,6 @@ export const HabitRepForm = (props) => {
                 onClick={evt => {
                     evt.preventDefault() // Prevent browser from submitting the form
                     enterPreviousHabitReps()
-                    console.log("test")
                 }}
                 className="btn btn-primary">
                 Add Previous Rep
