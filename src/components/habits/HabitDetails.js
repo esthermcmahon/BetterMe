@@ -5,10 +5,10 @@ import "./Habit.css"
 import "./HabitDetails.css"
 import EditIcon from "@material-ui/icons/Edit"
 import DeleteIcon from "@material-ui/icons/Delete"
-import AddBoxIcon from "@material-ui/icons/AddBox"
-import NoteAddIcon from "@material-ui/icons/NoteAdd"
+import AddIcon from "@material-ui/icons/Add"
+import NoteAddOutlinedIcon from "@material-ui/icons/NoteAddOutlined"
 import DoneIcon from "@material-ui/icons/Done"
-import ArchiveIcon from "@material-ui/icons/Archive"
+import ArchiveOutlinedIcon from "@material-ui/icons/ArchiveOutlined"
 import { Modal } from "reactstrap"
 import { HabitRepForm } from "../habitReps/HabitRepForm"
 import CancelPresentationIcon from "@material-ui/icons/CancelPresentation"
@@ -59,20 +59,20 @@ export const HabitDetails = (props) => {
                 }}><DoneIcon className="materialUIButton" /></button>
                 <button onClick={() => {
                     props.history.push(`/habits/${habit.id}/addHabitReps`)
-                }} title="Add Previous Reps" onClick={HRtoggle} className="addRepsButton"><AddBoxIcon className="materialUIButton " />
+                }} title="Add Previous Reps" onClick={HRtoggle} className="addRepsButton"><AddIcon className="materialUIButton " />
                     <Modal isOpen={HRModal} className="modal">
                         <HabitRepForm {...props} />
                         <button className="close-button" onClick={HRtoggle} title="close"><CancelPresentationIcon className="materialUIButton" /></button>
                     </Modal>
                 </button>
                 <button onClick={() => deleteHabit(habit.id).then(() => props.history.push("/main"))}><DeleteIcon className="materialUIButton" /></button>
-                <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} title="Save For Later"><ArchiveIcon className="materialUIButton" /></button>
+                <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} title="Save For Later"><ArchiveOutlinedIcon className="materialUIButton" /></button>
                 <button onClick={() => {
                     props.history.push(`/habits/edit/${habit.id}`)
                 }}><EditIcon className="materialUIButton" /></button>
                 <button onClick={() => {
                     props.history.push(`/habits/${habit.id}/notes/create`)
-                }} title="Add a Note" onClick={noteToggle}><NoteAddIcon className="materialUIButton" />
+                }} title="Add a Note" onClick={noteToggle}><NoteAddOutlinedIcon className="materialUIButton" />
                     <Modal isOpen={noteModal} className="modal">
                         <NoteForm {...props} />
                         <button className="close-button" onClick={noteToggle} title="close"><CancelPresentationIcon className="materialUIButton" /></button>

@@ -1,9 +1,51 @@
-.siteHeaderContainer {
+@media (max-width: 767px) {
 
+.siteHeaderContainer {
+    display: flex;
+    justify-content: center;
     
     
 }
 
 .siteHeader {
+    
    
+}
+
+
+header {
+    margin: 0rem;
+    padding: .0125rem 0.5rem 0rem 0.5rem;
+    background-color: #DAEEF7;
+    height: 6rem;
+    color: #3e6f84;
+  }
+
+}
+
+@media (min-width: 768px) {
+
+    .siteHeaderContainer {
+        display: flex;
+        justify-content: center;
+        
+        
+    }
+    
+    .siteHeader {
+        
+       
+    }
+
+
+
+
+  header {
+    margin: 0rem;
+    padding: .0125rem 0.5rem 0rem 0.5rem;
+    background-color: #DAEEF7;
+    height: 5rem;
+    color: #3e6f84;
+  }
+
 }

@@ -4,11 +4,12 @@ import { HabitContext } from "./HabitProvider"
 import { HabitRepContext } from "../habitReps/HabitRepProvider"
 import "./Habit.css"
 import DoneIcon from "@material-ui/icons/Done"
-import AddBoxIcon from "@material-ui/icons/AddBox"
-import ArchiveIcon from "@material-ui/icons/Archive"
+import AddIcon from "@material-ui/icons/Add"
+import ArchiveOutlinedIcon from "@material-ui/icons/ArchiveOutlined"
 import { Modal } from "reactstrap"
 import { HabitRepModal } from "../habitReps/HabitRepModal"
 import CancelPresentationIcon from "@material-ui/icons/CancelPresentation"
+import MoreVertIcon from "@material-ui/icons/MoreVert"
 
 
 
@@ -36,9 +37,11 @@ export const Habit = (props) => {
 
     return (
         <section className="habitCard" id={habit.color.color}>
-            <div className="habitName" ><Link to={`/habits/${habit.id}`}>
-                {habit.name}
-            </Link></div>
+            <div className="habitNameSection">
+                <div className="habitName" ><Link to={`/habits/${habit.id}`}>
+                    {habit.name} <MoreVertIcon className="moreVertIcon"/>
+                </Link></div>
+            </div>
 
             <div className="habitCard--buttons">
                 <button onClick={() => {
@@ -50,13 +53,13 @@ export const Habit = (props) => {
                 }}><DoneIcon className="habitCard--materialUIButton" /></button>
                 <button onClick={() => {
                     props.history.push(`/habits/${habit.id}/addHabitReps`)
-                }} title="Add Previous Reps" className="addRepsButton" onClick={HRtoggle}><AddBoxIcon className="habitCard--materialUIButton" />
+                }} title="Add Previous Reps" className="addRepsButton" onClick={HRtoggle}><AddIcon className="habitCard--materialUIButton" />
                     <Modal isOpen={HRModal} className="modal">
                         <HabitRepModal habitId={habit.id} {...props} />
                         <button className="close-button" onClick={HRtoggle} title="close"><CancelPresentationIcon className="materialUIButton" /></button>
                     </Modal>
                 </button>
-                <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} ><ArchiveIcon className="habitCard--materialUIButton" /></button>
+                <button onClick={() => archiveHabit(habit.id).then(() => props.history.push("/habits/archivedHabits"))} ><ArchiveOutlinedIcon className="habitCard--materialUIButton" /></button>
             </div>
 
         </section>

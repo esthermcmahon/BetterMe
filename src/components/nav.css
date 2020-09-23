@@ -1,18 +1,39 @@
 @media (max-width: 767px) {
 
 button.nav {
-    margin: .25rem;
+    margin: 0.5rem !important;
     padding: .25rem;
     
+    
 
+}
+.navButtonContainer {
+    background-color: #DAEEF7;
+    display: flex;
+    justify-content: center;
+    padding: 0rem 0rem 0rem 0rem;
+}
+.mainButtonContainer {
+    background-color: #DAEEF7;
+    padding: 0rem 0rem 1rem 1rem;
 }
 }
 
 @media (min-width: 768px) {
 
     button.nav {
-        margin: .25rem;
+        margin: .5rem !important;
         padding: .25rem;
     }
     
+    .navButtonContainer {
+        background-color: #DAEEF7;
+        display: flex;
+        justify-content: center;
+        padding: 0rem 0rem 0rem 0rem;
     }
+    .mainButtonContainer {
+        background-color: #DAEEF7;
+        padding: 0rem 0rem 1rem 1rem;
+    }
+}

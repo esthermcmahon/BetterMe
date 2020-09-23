@@ -31,27 +31,32 @@ export const ApplicationViews = () => {
             <Route path="/" render={(props) => {
                 return <Header {...props} />
             }} />
-            <Route path="/main" render={(props) => {
-                return <CreateNewHabitButton {...props} />
-            }} />
-            <Route path="/main" render={(props) => {
-                return <SavedHabits {...props} />
-            }} />
+            <section className="navButtonContainer">
+                <Route path="/main" render={(props) => {
+                    return <CreateNewHabitButton {...props} />
+                }} />
+                <Route path="/main" render={(props) => {
+                    return <SavedHabits {...props} />
+                }} />
 
-            <Route path="/main" render={(props) => {
-                return <Logout {...props} />
+                <Route path="/main" render={(props) => {
+                    return <Logout {...props} />
+                }} />
+            </section>
+            <section className="mainButtonContainer">
+
+                <Route path="/habits" render={(props) => {
+                    return <Main {...props} />
+                }} />
+                <Route path="/notes" render={(props) => {
+                    return <Main {...props} />
             }} />
-
-            <Route path="/habits" render={(props) => {
-                return <Main {...props} />
-            }} />
-            <Route path="/notes" render={(props) => {
-                return <Main {...props} />
-            }} />
+            </section>
 
 
 
-            <HabitProvider className="notesRepsContainer">
+
+            <HabitProvider>
                 <HabitRepProvider>
                     <ColorProvider>
                         <NoteProvider>
@@ -125,7 +130,7 @@ export const ApplicationViews = () => {
                     <Route exact path="/notes/:noteId(\d+)/edit" render={(props) => {
                         return <NoteForm {...props} />
                     }} />
-                      {/* <Route exact path="/notes/:noteId(\d+)/edit" render={(props) => {
+                    {/* <Route exact path="/notes/:noteId(\d+)/edit" render={(props) => {
                         return <NoteModal {...props} />
                     }} /> */}
                 </NoteProvider>
