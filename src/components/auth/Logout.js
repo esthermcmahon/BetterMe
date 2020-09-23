@@ -9,3 +9,5 @@ export const Logout = (props) => {
         </button>
     )
 }
+
+// localStorage.clear()

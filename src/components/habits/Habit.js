@@ -10,18 +10,19 @@ import { Modal } from "reactstrap"
 import { HabitRepModal } from "../habitReps/HabitRepModal"
 import CancelPresentationIcon from "@material-ui/icons/CancelPresentation"
 import MoreVertIcon from "@material-ui/icons/MoreVert"
-
+// import { ColorContext } from "../colors/ColorProvider"
 
 
 
 export const Habit = (props) => {
-    const { getHabitById, archiveHabit } = useContext(HabitContext)
+    const { getHabitById, habits, getHabits, archiveHabit } = useContext(HabitContext)
     const { addHabitRep } = useContext(HabitRepContext)
-
-    const [habit, setHabit] = useState({ color: {} })
+    // const { colors, getColors } = useContext(ColorContext)
+    
+    const [habit, setHabit] = useState({ color: {}})
+    // const [color, setColor] = useState({})
 
     const [HRModal, setHRModal] = useState(false);
-
     const HRtoggle = () => setHRModal(!HRModal);
 
 
@@ -29,6 +30,8 @@ export const Habit = (props) => {
         const habitId = parseInt(props.habit.id)
         getHabitById(habitId)
             .then(setHabit)
+  
+            
     }, [])
 
 
@@ -66,18 +69,3 @@ export const Habit = (props) => {
     )
 }
 
-{/* 
-    onClick={HRtoggle}
-    <Modal isOpen={HRModal} className="modal">
-<HabitRepForm {...props} />
-<button className="close-button" onClick={HRtoggle} title="close"><CancelPresentationIcon className="materialUIButton"/></button>
-</Modal> */}
-
-// <button onClick={() => {
-//     props.history.push(`/habits/${habit.id}/addHabitReps`)
-// }} title="Add Previous Reps" onClick={HRtoggle} className="addRepsButton"><AddBoxIcon className="materialUIButton " />
-//     <Modal isOpen={HRModal} className="modal">
-//         <HabitRepForm {...props} />
-//         <button className="close-button" onClick={HRtoggle} title="close"><CancelPresentationIcon className="materialUIButton" /></button>
-//     </Modal>
-// </button>

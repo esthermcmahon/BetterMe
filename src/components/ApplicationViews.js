@@ -22,15 +22,18 @@ import { HabitRepModal } from "./habitReps/HabitRepModal"
 import { NoteModal } from "./notes/NoteModal"
 import "./nav.css"
 import "./habits/HabitDetails.css"
+import { UserProvider } from "./users/UserProvider"
 
 
 
 export const ApplicationViews = () => {
     return (
         <>
-            <Route path="/" render={(props) => {
-                return <Header {...props} />
-            }} />
+            <UserProvider>
+                <Route path="/" render={(props) => {
+                    return <Header {...props} />
+                }} />
+            </UserProvider>
             <section className="navButtonContainer">
                 <Route path="/main" render={(props) => {
                     return <CreateNewHabitButton {...props} />
@@ -50,7 +53,7 @@ export const ApplicationViews = () => {
                 }} />
                 <Route path="/notes" render={(props) => {
                     return <Main {...props} />
-            }} />
+                }} />
             </section>
 
 
