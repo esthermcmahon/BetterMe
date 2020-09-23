@@ -1,8 +1,8 @@
 @media (max-width: 767px) {
 
 .habitProgress {
-    margin: 0.5rem;
-    padding: 0rem 0rem .5rem 0rem;
+    margin: 1rem;
+    padding: 0.rem 0rem .5rem 0rem;
 
 }
 
@@ -21,22 +21,22 @@
     
 }
 
-#redSalsa {
+#red {
     background-color: #F94144;
 }
-#orangeRed {
+#orange {
     background-color: #F3722C;
 }
-#maizeCrayola {
+#yellow {
     background-color: #F9C74F;
 }
-#pistachio {
+#green {
     background-color: #90BE6D;
 }
-#yaleBlue {
+#blue {
     background-color: #124E78;
 }
-#darkByzantium {
+#purple {
     background-color: #69385C;
 }
 
@@ -45,6 +45,8 @@
 @media (min-width: 768px) {
 
     .habitProgress {
+        margin: 2rem;
+        padding: 0.rem 0rem .5rem 0rem;
     
     }
     
@@ -66,22 +68,22 @@
         
     }
     
-    #redSalsa {
+    #red {
         background-color: #F94144;
     }
-    #orangeRed {
+    #orange {
         background-color: #F3722C;
     }
-    #maizeCrayola {
+    #yellow {
         background-color: #F9C74F;
     }
-    #pistachio {
+    #green {
         background-color: #90BE6D;
     }
-    #yaleBlue {
+    #blue {
         background-color: #124E78;
     }
-    #darkByzantium {
+    #purple {
         background-color: #69385C;
     }
     
