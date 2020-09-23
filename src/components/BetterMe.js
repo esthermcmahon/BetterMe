@@ -1,23 +1,26 @@
 import React from "react"
-import {Route, Redirect} from "react-router-dom"
-import {ApplicationViews} from "./ApplicationViews"
-// import {Header} from "./Header"
-import {Login} from "./auth/Login"
-import {Register} from "./auth/Register"
-//add BetterMe.css
+import { Route, Redirect } from "react-router-dom"
+import { ApplicationViews } from "./ApplicationViews"
+import { Login } from "./auth/Login"
+import { Register } from "./auth/Register"
+
+
 
 export const BetterMe = () => (
     <>
-        <Route render={()=> {
+      
+        <Route render={() => {
+
             if (localStorage.getItem("BetterMe__user")) {
-            return (
-                <>
-                <Route render={props => <ApplicationViews {...props} />} />
-                </>
-            )
-        } else {
-            return <Redirect to="/login" />
-        }
+                return (
+                    <>
+
+                        <Route render={props => <ApplicationViews {...props} />} />
+                    </>
+                )
+            } else {
+                return <Redirect to="/login" />
+            }
         }} />
         <Route path="/login" render={props => <Login {...props} />} />
         <Route path="/register" render={props => <Register {...props} />} />
