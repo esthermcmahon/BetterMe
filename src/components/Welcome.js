@@ -4,7 +4,7 @@ import "./header.css"
 
 
 
-export const Welcome = () => {
+export const Welcome = (props) => {
     const { users, getUsers } = useContext(UserContext)
 
     const [user, setUser] = useState({})

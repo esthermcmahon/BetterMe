@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import { HabitContext } from "./HabitProvider"
 import { HabitRepContext } from "../habitReps/HabitRepProvider"
-// import { ColorContext } from "../colors/ColorProvider"
 import "./Habit.css"
 import "./HabitDetails.css"
 import EditIcon from "@material-ui/icons/Edit"
@@ -20,10 +19,10 @@ import { NoteForm } from "../notes/NoteForm"
 export const HabitDetails = (props) => {
     const { getHabitById, habits, deleteHabit, getHabits, archiveHabit } = useContext(HabitContext)
     const { addHabitRep } = useContext(HabitRepContext)
-    // const { colors, getColors } = useContext(ColorContext)
+   
 
     const [habit, setHabit] = useState({color:{}})
-    // const [color, setColor] = useState({})
+   
 
 
     const [HRModal, setHRModal] = useState(false);
@@ -32,15 +31,7 @@ export const HabitDetails = (props) => {
     const [noteModal, setNoteModal] = useState(false);
     const noteToggle = () => setNoteModal(!noteModal);
 
-    // useEffect(() => {
-    //     getHabits()
-    //     // getColors()
-    // }, [])
-
-    // useEffect(() => {
-    //     const matchingHabit = habits.find(habit => habit.id === parseInt(props.match.params.habitId)) || {}
-    //     setHabit(matchingHabit)
-    // }, [habit])
+  
 
     useEffect(() => {
         const habitId = parseInt(props.match.params.habitId)
@@ -48,12 +39,7 @@ export const HabitDetails = (props) => {
             .then(setHabit)
             
     }, [])
-    // useEffect(() => {
 
-    //     const matchingColor = colors.find(color => habit.colorId === color.id) || {} //returns habit
-    //     setColor(matchingColor)
-
-    // }, [colors])
 
 
 
