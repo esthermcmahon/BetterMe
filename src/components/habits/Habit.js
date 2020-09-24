@@ -10,17 +10,17 @@ import { Modal } from "reactstrap"
 import { HabitRepModal } from "../habitReps/HabitRepModal"
 import CancelPresentationIcon from "@material-ui/icons/CancelPresentation"
 import MoreVertIcon from "@material-ui/icons/MoreVert"
-// import { ColorContext } from "../colors/ColorProvider"
+
 
 
 
 export const Habit = (props) => {
     const { getHabitById, habits, getHabits, archiveHabit } = useContext(HabitContext)
     const { addHabitRep } = useContext(HabitRepContext)
-    // const { colors, getColors } = useContext(ColorContext)
+
     
     const [habit, setHabit] = useState({ color: {}})
-    // const [color, setColor] = useState({})
+   
 
     const [HRModal, setHRModal] = useState(false);
     const HRtoggle = () => setHRModal(!HRModal);

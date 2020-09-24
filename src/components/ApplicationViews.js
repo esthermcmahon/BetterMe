@@ -45,7 +45,7 @@ export const ApplicationViews = () => {
                     return <Logout {...props} />
                 }} />
             </section>
-          
+
             <section className="mainButtonContainer">
 
                 <Route path="/habits" render={(props) => {

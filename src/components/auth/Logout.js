@@ -10,4 +10,3 @@ export const Logout = (props) => {
     )
 }
 
-// localStorage.clear()
