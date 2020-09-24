@@ -51,6 +51,7 @@ export const HabitForm = (props) => {
                 frequency: habit.frequency,
                 archive: false,
                 details: habit.details,
+                goal: habit.goal,
                 startDate: habit.startDate,
                 userId: parseInt(localStorage.getItem("BetterMe__user")),
                 colorId: colorId
@@ -65,6 +66,7 @@ export const HabitForm = (props) => {
                 frequency: habit.frequency,
                 archive: false,
                 details: habit.details,
+                goal: habit.goal,
                 startDate: habit.startDate,
                 colorId: colorId
 
@@ -94,6 +96,12 @@ export const HabitForm = (props) => {
                 <div className="form-group">
                     <label htmlFor="details">Details: </label>
                     <input type="text" name="details" id="details" required autoFocus className="form-control habitFormInput" placeholder="Details" defaultValue={habit.details} onChange={handleControlledInputChange} />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="goal">Goal: </label>
+                    <input type="text" name="goal" id="goal" required autoFocus className="form-control habitFormInput" placeholder="Optional: enter a number" defaultValue={habit.goal} onChange={handleControlledInputChange} />
                 </div>
             </fieldset>
             <fieldset>
