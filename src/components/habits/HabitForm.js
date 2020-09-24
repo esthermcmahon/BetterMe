@@ -80,32 +80,32 @@ export const HabitForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="name">Habit name: </label>
-                    <input type="text" name="name" id="name" required autoFocus className="form-control" placeholder="Habit name" defaultValue={habit.name} onChange={handleControlledInputChange} />
+                    <input type="text" name="name" id="name" required autoFocus className="form-control habitFormInput" placeholder="Habit name" defaultValue={habit.name} onChange={handleControlledInputChange} />
 
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="frequency">Frequency: </label>
-                    <input type="text" name="frequency" id="frequency" required autoFocus className="form-control" placeholder="Frequency" defaultValue={habit.frequency} onChange={handleControlledInputChange} />
+                    <input type="text" name="frequency" id="frequency" required autoFocus className="form-control habitFormInput" placeholder="Frequency" defaultValue={habit.frequency} onChange={handleControlledInputChange} />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="details">Details: </label>
-                    <input type="text" name="details" id="details" required autoFocus className="form-control" placeholder="Details" defaultValue={habit.details} onChange={handleControlledInputChange} />
+                    <input type="text" name="details" id="details" required autoFocus className="form-control habitFormInput" placeholder="Details" defaultValue={habit.details} onChange={handleControlledInputChange} />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="startDate">Start date: </label>
-                    <input type="date" name="startDate" id="startDate" required autoFocus className="form-control" defaultValue={habit.startDate} onChange={handleControlledInputChange} />
+                    <input type="date" name="startDate" id="startDate" required autoFocus className="form-control habitFormInput" defaultValue={habit.startDate} onChange={handleControlledInputChange} />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="colorId">Color: </label>
-                    <select name="colorId" className="form-control"
+                    <select name="colorId" className="form-control habitFormInput"
                         value={habit.colorId}
                         onChange={handleControlledInputChange}>
 

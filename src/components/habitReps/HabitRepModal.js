@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { HabitRepContext } from "./HabitRepProvider"
 import { HabitContext } from "../habits/HabitProvider"
-
+import "./habitRepForm.css"
 
 
 

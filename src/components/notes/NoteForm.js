@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { NoteContext } from "./NoteProvider"
 import { HabitContext } from "../habits/HabitProvider"
+import "../habitReps/habitRepForm.css"
 
 
 export const NoteForm = (props) => {
@@ -86,13 +87,13 @@ export const NoteForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="notes">Note: </label>
-                    <input type="text" name="notes" id="notes" required autoFocus className="form-control" placeholder="Notes" defaultValue={note.notes} onChange={handleControlledInputChange} />
+                    <input type="text" name="notes" id="notes" required autoFocus className="form-control noteFormInput" placeholder="Notes" defaultValue={note.notes} onChange={handleControlledInputChange} />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="date">Today's Date: </label>
-                    <input type="date" name="date" id="date" required autoFocus className="form-control" defaultValue={note.date} onChange={handleControlledInputChange} />
+                    <input type="date" name="date" id="date" required autoFocus className="form-control noteFormInput" defaultValue={note.date} onChange={handleControlledInputChange} />
                 </div>
             </fieldset>
 
@@ -104,7 +105,7 @@ export const NoteForm = (props) => {
                     
                 }}
                 className="btn btn-primary">
-                Save Note
+                {editMode? "Update Note" : "Save Note"}
             </button>
         </form>
     )

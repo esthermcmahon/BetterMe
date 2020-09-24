@@ -7,6 +7,14 @@ h2 {
 div {
     color: #174e66 !important;
 }
+.habitFormInput {
+    width: 400px !important;
+    
+}
+.habitForm {
+    padding: 1rem;
+}
+
 }
 
 @media (min-width: 768px) {
@@ -17,5 +25,13 @@ div {
     
     div {
         color: #174e66 !important;
+    }
+
+    .habitFormInput {
+        width: 400px !important;
+        
+    }
+    .habitForm {
+        padding: 1rem;
     }
     }
