@@ -19,7 +19,7 @@ import { Main } from "./MainButton"
 import { Header } from "./Header"
 import { SavedHabits } from "./habits/SavedHabits"
 import { HabitRepModal } from "./habitReps/HabitRepModal"
-import { NoteModal } from "./notes/NoteModal"
+import { Welcome } from "./Welcome"
 import "./nav.css"
 import "./habits/HabitDetails.css"
 import { UserProvider } from "./users/UserProvider"
@@ -29,11 +29,10 @@ import { UserProvider } from "./users/UserProvider"
 export const ApplicationViews = () => {
     return (
         <>
-            <UserProvider>
-                <Route path="/" render={(props) => {
-                    return <Header {...props} />
-                }} />
-            </UserProvider>
+
+            <Route path="/" render={(props) => {
+                return <Header {...props} />
+            }} />
             <section className="navButtonContainer">
                 <Route path="/main" render={(props) => {
                     return <CreateNewHabitButton {...props} />
@@ -46,6 +45,7 @@ export const ApplicationViews = () => {
                     return <Logout {...props} />
                 }} />
             </section>
+          
             <section className="mainButtonContainer">
 
                 <Route path="/habits" render={(props) => {
@@ -55,6 +55,11 @@ export const ApplicationViews = () => {
                     return <Main {...props} />
                 }} />
             </section>
+            <UserProvider>
+                <Route path="/main" render={(props) => {
+                    return <Welcome {...props} />
+                }} />
+            </UserProvider>
 
 
 
