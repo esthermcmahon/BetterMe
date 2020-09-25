@@ -56,11 +56,18 @@
         color: #123d4f !important;
         width: 90%;
         display: flex;
-        justify-content: center!important; 
+        justify-content: center!important;
+        align-items: center !important;
+        position: relative !important;
     
     
     }
-    .habitNameSection {
+    .habitLink {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         
     }
 
@@ -153,18 +160,35 @@
 
     .habitName {
         background-color: white;
-        padding: 0.0125rem;
-        margin: 0.0125rem;
+        padding: .75rem 0rem .75rem 0.125rem;
+        margin: 0.25rem;
         border-radius: 3px;
         color: #123d4f !important;
+        width: 90%;
+        display: flex;
+        justify-content: center!important;
+        align-items: center !important;
+        position: relative !important;
+    
     
     }
+    .habitLink {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        
+    }
+
+
     a {
         text-decoration: none;
         color: #123d4f !important;
         font-size: 14px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
 
     .modal {
         display: flex;
