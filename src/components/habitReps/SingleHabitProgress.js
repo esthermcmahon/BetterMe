@@ -71,7 +71,7 @@ export const SingleHabitProgress = ({ habit }) => {
                 return <div className="singleHabitRep" id={relatedColor.color}></div>
             })}
 
-            {filteredHabitReps.length / habit.goal === 1 ?  <Alert isOpen={visible} toggle={onDismiss} fade={false}>You did it!</Alert> : ""}
+            {filteredHabitReps.length / habit.goal === 1 ?  <Alert class="alert" isOpen={visible} toggle={onDismiss} fade={false}>You did it!</Alert> : ""}
 
                 </section>
 

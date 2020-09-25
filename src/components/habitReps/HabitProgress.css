@@ -17,15 +17,17 @@
     width: 1rem;
     margin: 0.2rem 0.2rem;      
 }
-/* .popup {
-    margin: 70px auto;
-    padding: 20px;
+.alert {
+    margin: 2rem;
+    padding: 2rem;
     background: #fff;
-     border-radius: 5px;
+    border-radius: 5px;
     width: 30%;
-    position: relative;
-    transition: all 5s ease-in-out;
-} */
+    align-self: center;
+    background-color: #EDF7FB;
+    border: 1px solid #123d4f !important
+   
+}
 
 #red {
     background-color: #F94144;
