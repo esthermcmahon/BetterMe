@@ -41,9 +41,9 @@ export const Habit = (props) => {
     return (
         <section className="habitCard" id={habit.color.color}>
             <div className="habitNameSection">
-                <div className="habitName" ><Link to={`/habits/${habit.id}`}>
-                    {habit.name} <MoreVertIcon className="moreVertIcon"/>
-                </Link></div>
+                <div className="habitName" >
+                    <div>{habit.name}</div> <MoreVertIcon className="moreVertIcon"/>
+                    <Link to={`/habits/${habit.id}`} class="habitLink"></Link></div>
             </div>
 
             <div className="habitCard--buttons">

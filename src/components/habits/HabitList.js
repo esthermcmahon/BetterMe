@@ -6,11 +6,16 @@ import { Habit } from "./Habit"
 export const HabitList = (props) => {
     const { habits, getHabits } = useContext(HabitContext)
 
+    const [filteredHabits, setFilteredHabits] = useState([])
+
     useEffect(() => {
         getHabits()
     }, [])
 
-    const filteredHabits = habits.filter(habit => habit.userId === parseInt(localStorage.getItem("BetterMe__user"))) || {}
+    useEffect(() => {
+        setFilteredHabits(habits.filter(habit => habit.userId === parseInt(localStorage.getItem("BetterMe__user"))))
+    }, [habits])
+    
 
 
     return (

@@ -49,7 +49,7 @@ export const HabitDetails = (props) => {
                 <h3 className="habitName">{habit.name}</h3>
                 <div className="dateFrequencyDetails">
                     <div className="habitDate">Start Date: {new Date(habit.startDate).toLocaleDateString('en-US')}</div>
-                    <div className="habitFrequency">Frequency goal: {habit.frequency}</div>
+                    <div className="habitFrequency">Frequency: {habit.frequency}</div>
                     <div className="hDetails">Details: {habit.details}</div>
                 </div>
                 <button className="habitDetailsButton" onClick={() => {

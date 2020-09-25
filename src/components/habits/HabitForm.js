@@ -9,7 +9,7 @@ export const HabitForm = (props) => {
     const { colors, getColors } = useContext(ColorContext)
 
     //component state
-    const [habit, setHabit] = useState({name:""})
+    const [habit, setHabit] = useState({name:"", goal:""})
 
     const editMode = props.match.params.hasOwnProperty("habitId")
 
@@ -51,7 +51,7 @@ export const HabitForm = (props) => {
                 frequency: habit.frequency,
                 archive: false,
                 details: habit.details,
-                goal: habit.goal,
+                goal: parseInt(habit.goal) || 0,
                 startDate: habit.startDate,
                 userId: parseInt(localStorage.getItem("BetterMe__user")),
                 colorId: colorId
@@ -66,7 +66,7 @@ export const HabitForm = (props) => {
                 frequency: habit.frequency,
                 archive: false,
                 details: habit.details,
-                goal: habit.goal,
+                goal: parseInt(habit.goal) || 0,
                 startDate: habit.startDate,
                 colorId: colorId
 

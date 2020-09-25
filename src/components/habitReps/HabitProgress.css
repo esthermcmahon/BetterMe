@@ -9,17 +9,23 @@
 .singleHabitProgress {
         display: flex;
         flex-wrap: wrap;  
-
 }
 
 .singleHabitRep {
    
-        height: 1rem;
-        width: 1rem;
-        margin: 0.2rem 0.2rem;
-       
-    
+    height: 1rem;
+    width: 1rem;
+    margin: 0.2rem 0.2rem;      
 }
+/* .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+     border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+} */
 
 #red {
     background-color: #F94144;

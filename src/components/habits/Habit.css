@@ -57,10 +57,17 @@
         width: 90%;
         display: flex;
         justify-content: center!important; 
+        align-items: center !important;
+        position: relative !important;
     
     
     }
-    .habitNameSection {
+    .habitLink {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         
     }
 
@@ -70,6 +77,8 @@
         color: #123d4f !important;
         font-size: 14px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* display: flex;
+        justify-content: space-between !important; */
     }
 
     .modal {

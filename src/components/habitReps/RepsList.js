@@ -17,7 +17,7 @@ export const RepsList = (props) => {
     const [ currentRepsLength, setCurrentRepsLength ] = useState()
     const [ goal, setGoal] = useState()
 
-    const noGoal = habit.goal === ""
+    const noGoal = habit.goal === 0
     
 
     useEffect(() => {
@@ -31,7 +31,7 @@ export const RepsList = (props) => {
         setRelatedHabitReps(matchingHabitReps)
         const numberOfReps = matchingHabitReps.length
         setCurrentRepsLength(numberOfReps)
-    }, [habitReps], [currentRepsLength])
+    }, [habitReps, currentRepsLength])
 
 
     useEffect(() => {
@@ -39,9 +39,9 @@ export const RepsList = (props) => {
         const matchingHabit = habits.find(habit => habit.id === habitId) || {} //returns habit
         setHabit(matchingHabit)
         const goalOfReps = matchingHabit.goal
-        setGoal(goalOfReps)
+        setGoal(parseInt(goalOfReps))
 
-    }, [habits], [goal])
+    }, [habits, goal])
 
     return (
         <>
