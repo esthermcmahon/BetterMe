@@ -20,11 +20,6 @@ export const HabitProgress = (props) => {
 
     }, [])
 
-    // // useEffect(() => {
-    //     const matchingHabit = habits.find(habit => habit.id === habitRep.habitId) || {}
-    //     setRelatedHabit(matchingHabit)
-
-    // // }, [habits])
 
     useEffect(() => {
 
@@ -37,8 +32,6 @@ export const HabitProgress = (props) => {
 
     const filteredHabits = habits.filter(habit => habit.userId === parseInt(localStorage.getItem("BetterMe__user"))) || {}
 
-
-
     return (
         <div>
             <h3>Habit Progress</h3>
@@ -46,7 +39,7 @@ export const HabitProgress = (props) => {
 
                 {
                     filteredHabits.map(habit => {
-                        return habit.archive === false ? <SingleHabitProgress key={habit.id} {...props} habit={habit} /> : ""
+                        return habit.archive === false ? <SingleHabitProgress key={habit.id} habitId={habit.id} {...props} habit={habit} /> : ""
                     })
                 }
             </section>

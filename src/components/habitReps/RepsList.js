@@ -14,7 +14,11 @@ export const RepsList = (props) => {
     const [relatedHabitReps, setRelatedHabitReps] = useState([])
     const [habit, setHabit] = useState({})
 
+    const [ currentRepsLength, setCurrentRepsLength ] = useState()
+    const [ goal, setGoal] = useState()
 
+    const noGoal = habit.goal === 0
+    
 
     useEffect(() => {
         getHabitReps()
@@ -25,20 +29,27 @@ export const RepsList = (props) => {
     useEffect(() => {
         const matchingHabitReps = habitReps.filter(hr => hr.habitId === habitId) || []
         setRelatedHabitReps(matchingHabitReps)
-    }, [habitReps])
+        const numberOfReps = matchingHabitReps.length
+        setCurrentRepsLength(numberOfReps)
+    }, [habitReps, currentRepsLength])
 
 
     useEffect(() => {
 
         const matchingHabit = habits.find(habit => habit.id === habitId) || {} //returns habit
         setHabit(matchingHabit)
+        const goalOfReps = matchingHabit.goal
+        setGoal(parseInt(goalOfReps))
 
-    }, [habits])
+    }, [habits, goal])
 
     return (
         <>
             <div className="habitRepsList">
                 <h3>Completed Reps</h3>
+                <>
+                {noGoal ? "" : `${currentRepsLength} / ${goal}`}
+                </>
                 {
                     relatedHabitReps.map(habitRep => {
 

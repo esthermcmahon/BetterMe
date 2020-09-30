@@ -60,7 +60,7 @@ export const HabitRepForm = (props) => {
                 onClick={evt => {
                     evt.preventDefault() // Prevent browser from submitting the form
                     enterPreviousHabitReps()
-                    console.log("test")
+                   
                 }}
                 className="btn btn-primary">
                 Add Previous Rep
