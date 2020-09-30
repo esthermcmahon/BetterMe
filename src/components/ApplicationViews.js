@@ -60,7 +60,7 @@ export const ApplicationViews = () => {
                     return <Welcome {...props} />
                 }} />
             </UserProvider>
-
+          
 
 
 

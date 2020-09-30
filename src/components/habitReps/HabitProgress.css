@@ -18,14 +18,16 @@
     margin: 0.2rem 0.2rem;      
 }
 .alert {
-    margin: 2rem;
-    padding: 2rem;
+    margin: 0rem;
+    padding: 0rem;
     background: #fff;
     border-radius: 5px;
-    width: 30%;
-    align-self: center;
+    width: 90%;
+    align-items: center !important;
     background-color: #EDF7FB;
-    border: 1px solid #123d4f !important
+    border: 1px solid #123d4f !important;
+    position: absolute !important;
+
    
 }
 
