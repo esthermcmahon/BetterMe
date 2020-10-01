@@ -36,4 +36,4 @@ Make sure you have Node.js and npm installed
 1. [Wireframe](https://www.figma.com/file/VADBqiGQGxrGH5Sx3XRQzE/Capstone?node-id=0%3A1)
 
 
-Created by [Esther Sanders](https://github.com/estherviolin)  
+Created by Esther Sanders [GitHub](https://github.com/estherviolin), [LinkedIn](https://www.linkedin.com/in/esthersanders23/)
