@@ -2,7 +2,7 @@
 As a person who always has a handful of habits I would like to be building, I wanted to create an app to keep track of them. Most apps are geared towards a specific type of habit, but BetterMe provides users an organized space to create and track many different habits simultaneously, with a visual representation of their progress. 
   
 
-# To run this app, follow these instructions:
+## # To run this app, follow these instructions:
 Make sure you have Node.js and npm installed
 1. `git clone` repository URL
 1. `cd` into the directory it creates
@@ -21,7 +21,7 @@ Make sure you have Node.js and npm installed
 1. This app was designed for mobile screens, so press command + option + j (for Macs) or control + shift + j (for Windows) to open Dev Tools, click Toggle Device Toolbar to change browser view
 1. Go to the localhost in your browser and register an account (`localhost:3000/login`)
 
-# Features
+## # Features
 
 * User can create a new habit, including start date, frequency, optional goal, details, as well as associated color. 
 * User can edit and delete habits
@@ -31,9 +31,9 @@ Make sure you have Node.js and npm installed
 * Each note can be edited and deleted
 * User can archive a habit. (It will be listed on "Saved For Later" and can be added back to the dashboard at any time.)
 
-# Planning Links
+## # Planning Links
 1. [ERD](https://dbdiagram.io/d/5f57e94988d052352cb67029)
 1. [Wireframe](https://www.figma.com/file/VADBqiGQGxrGH5Sx3XRQzE/Capstone?node-id=0%3A1)
 
-# Created By
+
 [Esther Sanders](https://github.com/estherviolin)  
