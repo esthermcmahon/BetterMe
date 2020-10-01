@@ -34,22 +34,22 @@ Make sure you have Node.js and npm installed
 ## Application Walkthrough
 
 #### Login
-![](images/Login.png)
+![](src/images/Login.png)
 
 #### Main
-![](images/Main.png)
+![](src/images/Main.png)
 
 #### Create New Habit
-![](images/NewHabitForm.png)
+![](src/images/NewHabitForm.png)
 
 #### Habit Details View/ Adding Note
-![](images/AddNote.png)
+![](src/images/AddNote.png)
 
 #### Add Previous Habit Reps
-![](images/AddPreviousHabitRep.png)
+![](src/images/AddPreviousHabitRep.png)
 
 #### Goal Achieved Alert
-![](images/GoalAchived.png)
+![](src/images/GoalAchived.png)
 
 ## Planning Links
 1. [ERD](https://dbdiagram.io/d/5f57e94988d052352cb67029)
