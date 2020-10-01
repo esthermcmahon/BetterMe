@@ -1,68 +1,39 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# BetterMe
+As a person who always has a handful of habits I would like to be building, I wanted to create an app to keep track of them. Most apps are geared towards a specific type of habit, but BetterMe provides users an organized space to create and track many different habits simultaneously, with a visual representation of their progress. 
+  
 
-## Available Scripts
+# To run this app, follow these instructions:
+Make sure you have Node.js and npm installed
+1. `git clone` repository URL
+1. `cd` into the directory it creates
+1. `npm install` `npm i --save react react-dom react-router-dom reactstrap` `npm install @material-ui/core`
+1. `mkdir api` and `touch database.json` to create the database
+1. In your `database.json` file, copy and paste the following empty arrays: 
+    `{
+        "habits": [],
+        "colors": [],
+        "users": [],
+        "notes": [],
+        "habitReps": []   
+    }`
+1. Serve JSON file utilizing `json-server -w database.json -p 8088`
+1. In a new tab in your terminal, `npm start` from the repository directory
+1. This app was designed for mobile screens, so press command + option + j (for Macs) or control + shift + j (for Windows) to open Dev Tools, click Toggle Device Toolbar to change browser view
+1. Go to the localhost in your browser and register an account (`localhost:3000/login`)
 
-In the project directory, you can run:
+# Features
 
-### `npm start`
+* User can create a new habit, including start date, frequency, optional goal, details, as well as associated color. 
+* User can edit and delete habits
+* User can add a "habit rep" (past or present) for each time they've completed the habit. A visual representation of their habit reps will be rendered on main, and a list of dates of completed reps is on each habit details page
+* If the user has defined a goal, the habit details page will keep track of how many reps they've completed out of their total goal. The main page will alert them when they have reached their goal.
+* User can add notes to each habit.
+* Each note can be edited and deleted
+* User can archive a habit. (It will be listed on "Saved For Later" and can be added back to the dashboard at any time.)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Planning Links
+1. [ERD](https://dbdiagram.io/d/5f57e94988d052352cb67029)
+1. [Wireframe](https://www.figma.com/file/VADBqiGQGxrGH5Sx3XRQzE/Capstone?node-id=0%3A1)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+# Created By
+[Esther Sanders](https://github.com/estherviolin)  
