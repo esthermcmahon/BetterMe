@@ -49,7 +49,7 @@ Make sure you have Node.js and npm installed
 ![](src/images/AddPreviousHabitRep.png)
 
 #### Goal Achieved Alert
-![](src/images/GoalAchived.png)
+![](src/images/GoalAchieved.png)
 
 ## Planning Links
 1. [ERD](https://dbdiagram.io/d/5f57e94988d052352cb67029)
