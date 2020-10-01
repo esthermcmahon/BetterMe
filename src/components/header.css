@@ -5,9 +5,11 @@
     justify-content: center;
     
     
+    
 }
 
 .siteHeader {
+
     
    
 }
@@ -15,9 +17,9 @@
 
 header {
     margin: 0rem;
-    padding: .75rem 0.5rem 0rem 0.5rem;
+    padding: 2rem 0.5rem 0rem 0.5rem;
     background-color: #DAEEF7;
-    height: 6rem;
+    height: 4.5rem;
     color: #3e6f84;
   }
 
@@ -49,9 +51,9 @@ header {
 
   header {
     margin: 0rem;
-    padding: .0125rem 0.5rem 0rem 0.5rem;
+    padding: 2rem 0.5rem 0rem 0.5rem;
     background-color: #DAEEF7;
-    height: 5rem;
+    height: 4.5rem;
     color: #3e6f84;
   }
 
