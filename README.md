@@ -33,9 +33,6 @@ Make sure you have Node.js and npm installed
 
 ## Application Walkthrough
 
-#### Login
-![](src/images/Login.png)
-
 #### Main
 ![](src/images/Main.png)
 
@@ -50,6 +47,16 @@ Make sure you have Node.js and npm installed
 
 #### Goal Achieved Alert
 ![](src/images/GoalAchieved.png)
+
+## Technologies Used
+* Visual Studio Code
+* React library
+* JavaScript
+* CSS
+* Reactstrap
+* Material UI
+* dbDiagram
+* Figma
 
 ## Planning Links
 1. [ERD](https://dbdiagram.io/d/5f57e94988d052352cb67029)
