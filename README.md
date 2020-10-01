@@ -31,6 +31,26 @@ Make sure you have Node.js and npm installed
 * Each note can be edited and deleted
 * User can archive a habit. (It will be listed on "Saved For Later" and can be added back to the dashboard at any time.)
 
+## Application Walkthrough
+
+#### Login
+![](images/Login.png)
+
+#### Main
+![](images/Main.png)
+
+#### Create New Habit
+![](images/NewHabitForm.png)
+
+#### Habit Details View/ Adding Note
+![](images/AddNote.png)
+
+#### Add Previous Habit Reps
+![](images/AddPreviousHabitRep.png)
+
+#### Goal Achieved Alert
+![](images/GoalAchived.png)
+
 ## Planning Links
 1. [ERD](https://dbdiagram.io/d/5f57e94988d052352cb67029)
 1. [Wireframe](https://www.figma.com/file/VADBqiGQGxrGH5Sx3XRQzE/Capstone?node-id=0%3A1)
