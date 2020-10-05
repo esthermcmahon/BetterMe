@@ -59,7 +59,7 @@ export const NoteForm = (props) => {
                 id: note.id,
                 habitId: habitId,
                 userId: parseInt(localStorage.getItem("BetterMe__user")),
-                date: note.date.replace(/-/g, `\/`),
+                date: note.date,
                 notes: note.notes
 
             })
@@ -70,7 +70,7 @@ export const NoteForm = (props) => {
         addNote({
             habitId: habitId,
             userId: parseInt(localStorage.getItem("BetterMe__user")),
-            date: note.date.replace(/-/g, `\/`),
+            date: note.date,
             notes: note.notes
 
         })

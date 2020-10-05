@@ -38,7 +38,7 @@ export const HabitRepForm = (props) => {
 
             addHabitRep({
                 habitId: habit.id,
-                dateTimeDone: new Date(habitRep.dateTimeDone.replace(/-/g, `\/`))
+                dateTimeDone: habitRep.dateTimeDone
 
             })
                 .then(() => props.history.push("/main"))

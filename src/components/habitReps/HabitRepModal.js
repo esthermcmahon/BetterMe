@@ -36,7 +36,7 @@ export const HabitRepModal = (props) => {
 
             addHabitRep({
                 habitId: props.habitId,
-                dateTimeDone: habitRep.dateTimeDone.replace(/-/g, `\/`)
+                dateTimeDone: habitRep.dateTimeDone
 
             })
                 .then(() => props.history.push("/main"))
