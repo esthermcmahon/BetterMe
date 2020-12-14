@@ -67,7 +67,7 @@ export const HabitForm = (props) => {
                 archive: false,
                 details: habit.details,
                 goal: parseInt(habit.goal) || 0,
-                startDate: habit.startDate,
+                startDate: new Date(habit.startDate.replace(/-/g, `\/`)),
                 colorId: colorId
 
             })

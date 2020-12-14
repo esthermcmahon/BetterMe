@@ -47,12 +47,5 @@ export const HabitProgress = (props) => {
     )
 }
 
-{/* </section>
-        <section className="habitProgress">
-            <h3>{habit.name}: {habitReps.length} </h3>
-
-        </section>
-       */}
-
 
 

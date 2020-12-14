@@ -7,7 +7,6 @@ import { Alert } from "reactstrap"
 
 
 
-
 export const SingleHabitProgress = ({ habit }) => {
     const { colors, getColors } = useContext(ColorContext)
     const { habitReps, getHabitReps } = useContext(HabitRepContext)
@@ -20,13 +19,9 @@ export const SingleHabitProgress = ({ habit }) => {
 
     const [currentRepsLength, setCurrentRepsLength] = useState()
 
-    // const [ goal, setGoal] = useState()
-    // const [goalState, setGoalState] = useState(false)
 
     const { habits, getHabits } = useContext(HabitContext)
-    // const [habitWithGoal, setHabitWithGoal] = useState({})
-    // console.log(habit)
-    // const habitId = props.key
+  
 
     useEffect(() => {
         getHabitReps()
@@ -42,19 +37,6 @@ export const SingleHabitProgress = ({ habit }) => {
         setCurrentRepsLength(numberOfReps)
     }, [habitReps], [currentRepsLength])
 
-
-    // useEffect(() => {
-    //     const goalOfReps = habit.goal
-    //     setGoal(goalOfReps)
-
-    // }, [goal])
-
-    // useEffect(() => {
-    //     if (currentRepsLength === goal) {
-    //         setGoalState(!goalState)
-    //     }
-    //     console.log(goalState)
-    // }, [goalState])
 
     useEffect(() => {
         const matchingColor = colors.find(color => habit.colorId === color.id) || {}
@@ -80,11 +62,4 @@ export const SingleHabitProgress = ({ habit }) => {
 }
 
 
-{/* <div id="popup1" class="overlay">
-<div class="popup">
-    <a class="close" href="#">&times;</a>
-    <div class="content">You did it!</div>
-</div> 
-</>
-: ""} */}
-           
+ 

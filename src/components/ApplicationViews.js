@@ -138,9 +138,6 @@ export const ApplicationViews = () => {
                     <Route exact path="/notes/:noteId(\d+)/edit" render={(props) => {
                         return <NoteForm {...props} />
                     }} />
-                    {/* <Route exact path="/notes/:noteId(\d+)/edit" render={(props) => {
-                        return <NoteModal {...props} />
-                    }} /> */}
                 </NoteProvider>
             </HabitProvider>
 
