@@ -65,6 +65,3 @@ export const RepsList = (props) => {
     )
 }
 
-// deleteHabitRep
-// <button onClick={() => deleteHabitRep(habitRep.id)}>x</button>
-// key={habit.id} habit={habit} note={note} {...props}

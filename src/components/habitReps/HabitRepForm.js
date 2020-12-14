@@ -15,6 +15,7 @@ export const HabitRepForm = (props) => {
 
     const habitId = parseInt(props.match.params.habitId)
 
+
     const handleControlledInputChange = (event) => {
         const newHabitRep = Object.assign({}, habitRep)
         newHabitRep[event.target.name] = event.target.value
@@ -38,7 +39,7 @@ export const HabitRepForm = (props) => {
 
             addHabitRep({
                 habitId: habit.id,
-                dateTimeDone: habitRep.dateTimeDone
+                dateTimeDone: new Date(habitRep.dateTimeDone.replace(/-/g, `\/`))
 
             })
                 .then(() => props.history.push("/main"))
